@@ -1,0 +1,113 @@
+/* ====================================================
+   GitHub Mastery Guide — Additional Styles
+   (Animations, polish, cheatsheet section extras)
+   ==================================================== */
+
+/* ── Animated underline on h3 hover ── */
+.topic-card h3 {
+  position: relative;
+  cursor: default;
+}
+
+/* ── Code syntax highlight colors ── */
+pre code .comment { color: #6b7280; font-style: italic; }
+pre code .keyword { color: #f472b6; }
+pre code .string { color: #86efac; }
+pre code .number { color: #fb923c; }
+
+/* ── Smooth section reveal ── */
+.module-section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: sectionReveal 0.6s ease forwards;
+}
+
+@keyframes sectionReveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Tooltip for copy button ── */
+.copy-btn[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+/* ── Nav link notification dot ── */
+.nav-link.has-update::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--accent-green);
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* ── Module section animation delays ── */
+#module1  { animation-delay: 0.05s; }
+#module2  { animation-delay: 0.1s; }
+#module3  { animation-delay: 0.15s; }
+#module4  { animation-delay: 0.1s; }
+#module5  { animation-delay: 0.1s; }
+#module6  { animation-delay: 0.1s; }
+#module7  { animation-delay: 0.1s; }
+#module8  { animation-delay: 0.1s; }
+#module9  { animation-delay: 0.1s; }
+#module10 { animation-delay: 0.1s; }
+#module11 { animation-delay: 0.1s; }
+#module12 { animation-delay: 0.1s; }
+#module13 { animation-delay: 0.1s; }
+
+/* ── Floating back-to-top ── */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 46px;
+  height: 46px;
+  background: var(--gradient-main);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.5);
+  transition: var(--transition);
+  z-index: 500;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
+}
+
+/* ── Print styles ── */
+@media print {
+  .sidebar, .topbar, .back-to-top { display: none !important; }
+  .main-content { margin-left: 0; margin-top: 0; }
+  .module-section { border: 1px solid #ddd; page-break-inside: avoid; }
+  body { background: white; color: black; }
+}

@@ -1,0 +1,2402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A comprehensive GitHub Learning Guide from Basic to Intermediate Level. Learn Git, GitHub, version control, open source, and career skills." />
+  <meta name="keywords" content="GitHub, Git, version control, tutorial, beginner, intermediate, open source, programming" />
+  <title>GitHub Mastery Guide | Basic to Intermediate</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="extras.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== SIDEBAR NAV ===== -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+        <span>GitHub Mastery</span>
+      </div>
+      <button class="sidebar-close" id="sidebarClose">✕</button>
+    </div>
+    <div class="sidebar-search">
+      <input type="text" id="searchInput" placeholder="🔍 Search topics..." />
+    </div>
+    <ul class="sidebar-nav" id="sidebarNav">
+      <li class="nav-section">📚 Getting Started</li>
+      <li><a href="#module1" class="nav-link active">Module 1: Version Control</a></li>
+      <li><a href="#module2" class="nav-link">Module 2: Installing Git</a></li>
+      <li><a href="#module3" class="nav-link">Module 3: Git Fundamentals</a></li>
+      <li class="nav-section">🌿 Core Concepts</li>
+      <li><a href="#module4" class="nav-link">Module 4: Repositories</a></li>
+      <li><a href="#module5" class="nav-link">Module 5: Branching</a></li>
+      <li><a href="#module6" class="nav-link">Module 6: Repo Features</a></li>
+      <li><a href="#module7" class="nav-link">Module 7: Markdown</a></li>
+      <li class="nav-section">🚀 Professional Skills</li>
+      <li><a href="#module8" class="nav-link">Module 8: Profile Building</a></li>
+      <li><a href="#module9" class="nav-link">Module 9: Open Source</a></li>
+      <li><a href="#module10" class="nav-link">Module 10: Intermediate Git</a></li>
+      <li class="nav-section">⚡ Advanced</li>
+      <li><a href="#module11" class="nav-link">Module 11: Advanced Features</a></li>
+      <li><a href="#module12" class="nav-link">Module 12: Real Workflows</a></li>
+      <li><a href="#module13" class="nav-link">Module 13: Career Growth</a></li>
+      <li class="nav-section">📋 Resources</li>
+      <li><a href="#cheatsheet" class="nav-link">Command Cheat Sheet</a></li>
+      <li><a href="#roadmap30" class="nav-link">30-Day Roadmap</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#interviews" class="nav-link">Interview Q&A</a></li>
+      <li><a href="#mastery" class="nav-link">Mastery Roadmap</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sidebar overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ===== TOP NAVIGATION ===== -->
+  <header class="topbar">
+    <button class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="topbar-title">GitHub Mastery Guide</div>
+    <div class="topbar-actions">
+      <span class="progress-label">Progress:</span>
+      <div class="progress-bar-mini">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <span class="progress-pct" id="progressPct">0%</span>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main-content">
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-bg-anim"></div>
+      <div class="hero-content">
+        <div class="hero-badge">🎓 Complete Self-Learning Course</div>
+        <h1 class="hero-title">GitHub Mastery Guide</h1>
+        <p class="hero-subtitle">Basic → Intermediate → Advanced</p>
+        <p class="hero-desc">A comprehensive learning resource for students, developers, and aspiring open-source contributors. Master Git, GitHub, version control, and professional workflows — from absolute zero to industry-ready.</p>
+        <div class="hero-stats">
+          <div class="stat-card"><span class="stat-num">13</span><span class="stat-label">Modules</span></div>
+          <div class="stat-card"><span class="stat-num">50+</span><span class="stat-label">Commands</span></div>
+          <div class="stat-card"><span class="stat-num">100+</span><span class="stat-label">Concepts</span></div>
+          <div class="stat-card"><span class="stat-num">30</span><span class="stat-label">Day Plan</span></div>
+        </div>
+        <div class="hero-cta">
+          <a href="#module1" class="btn-primary">Start Learning →</a>
+          <a href="#cheatsheet" class="btn-secondary">Cheat Sheet</a>
+        </div>
+      </div>
+      <div class="hero-illustration">
+        <div class="git-graph">
+          <div class="git-node main-branch" style="--delay:0s">main</div>
+          <div class="git-line"></div>
+          <div class="git-node feature-branch" style="--delay:0.3s">feature</div>
+          <div class="git-line"></div>
+          <div class="git-node merge-node" style="--delay:0.6s">merge</div>
+          <div class="git-commit-dots">
+            <span style="--d:0s"></span>
+            <span style="--d:0.2s"></span>
+            <span style="--d:0.4s"></span>
+            <span style="--d:0.6s"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MODULE 1 ===================== -->
+    <section class="module-section" id="module1">
+      <div class="module-header">
+        <div class="module-number">01</div>
+        <div class="module-info">
+          <h2>Introduction to Version Control</h2>
+          <p>Understand what version control is, why it exists, and how Git and GitHub fit into the picture.</p>
+        </div>
+      </div>
+
+      <div class="topic-card" id="what-is-vc">
+        <h3>1.1 What is Version Control?</h3>
+        <div class="content-block">
+          <p>Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later. Think of it like the "undo history" in Microsoft Word, but far more powerful, structured, and designed for software development at scale.</p>
+          <p>In everyday terms, imagine you are writing a novel. You start with a draft, make edits, rewrite chapters, and at some point realize the original Chapter 3 was better. Without version control, you would have to manually keep copies — "draft1.docx", "draft2_final.docx", "draft2_FINAL_v2.docx" — which quickly becomes chaotic. Version control solves exactly this problem by automatically tracking every change, who made it, when, and why.</p>
+          <p>In software development, version control is absolutely essential. A single project may contain thousands of files and be edited by dozens of developers simultaneously. Without a versioning system, keeping track of changes, avoiding conflicts, and rolling back errors would be practically impossible. Version control systems (VCS) provide a structured way to manage this complexity.</p>
+          <p>There are two main types of version control systems: <strong>Centralized Version Control Systems (CVCS)</strong> like SVN (Subversion) and Perforce, and <strong>Distributed Version Control Systems (DVCS)</strong> like Git and Mercurial. In CVCS, there is one central server that stores all version history, and every developer connects to it. In DVCS, every developer has a complete copy of the entire history on their local machine, which provides speed, redundancy, and the ability to work offline.</p>
+        </div>
+        <div class="highlight-box purpose-box">
+          <strong>💡 Purpose:</strong> To track, manage, and collaborate on file changes systematically across time, teams, and projects.
+        </div>
+        <div class="use-cases">
+          <h4>Real-World Use Cases</h4>
+          <ul>
+            <li>🔧 Software teams tracking code changes across releases</li>
+            <li>📝 Writers collaborating on documentation or books</li>
+            <li>🎨 Designers versioning UI/UX files (Figma has version history too)</li>
+            <li>🏢 Large corporations managing enterprise codebases with hundreds of developers</li>
+            <li>🧑‍🔬 Researchers versioning data analysis scripts</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>1.2 Why Version Control is Important</h3>
+        <div class="content-block">
+          <p>Version control is not just a tool — it is a fundamental best practice of professional software development. Here is why every developer, whether working alone or in a team, needs version control:</p>
+          <p><strong>History and Accountability:</strong> Every change ever made to a project is recorded with a timestamp and the author's identity. This creates a complete audit trail. If a bug appears in a production system, developers can look back through the history, find exactly which change introduced the bug, and understand why that change was made by reading the commit message.</p>
+          <p><strong>Collaboration Without Chaos:</strong> Multiple developers can work on the same project simultaneously. Version control systems have built-in mechanisms to merge changes from different contributors intelligently. Without this, two developers editing the same file would simply overwrite each other's work.</p>
+          <p><strong>Safe Experimentation:</strong> Branching (which we cover in Module 5) allows developers to try new features, refactor code, or experiment with ideas in an isolated copy of the project — without risking the stable, working version. If the experiment fails, the branch is simply discarded. If it succeeds, it is merged into the main project.</p>
+          <p><strong>Backup and Recovery:</strong> Because the full history is stored — both locally and on remote servers like GitHub — if a developer's computer crashes or files are accidentally deleted, the entire project can be recovered instantly. Version control is effectively a continuous, automated backup system.</p>
+          <p><strong>Code Review and Quality:</strong> Modern version control workflows include code review processes, where changes are reviewed by peers before being merged. This dramatically improves code quality and helps junior developers learn from senior ones.</p>
+        </div>
+        <div class="advantages-grid">
+          <div class="adv-card positive">
+            <h4>✅ Advantages</h4>
+            <ul>
+              <li>Complete history of every change</li>
+              <li>Easy rollback to any previous state</li>
+              <li>Parallel development via branches</li>
+              <li>Better team collaboration</li>
+              <li>Automatic conflict detection</li>
+              <li>Accountability and transparency</li>
+            </ul>
+          </div>
+          <div class="adv-card negative">
+            <h4>⚠️ Limitations</h4>
+            <ul>
+              <li>Learning curve for beginners</li>
+              <li>Complex merge conflicts in large teams</li>
+              <li>Storage overhead for binary files</li>
+              <li>Requires discipline in commit messages</li>
+              <li>Misuse can create messy histories</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>1.3 History of Git</h3>
+        <div class="content-block">
+          <p>Git was created by <strong>Linus Torvalds</strong> in 2005 — the same person who created the Linux operating system kernel. The story behind Git's creation is fascinating and instructive.</p>
+          <p>The Linux kernel project, one of the most complex open-source software projects in history, was using a proprietary version control system called <strong>BitKeeper</strong> from 2002 to 2005. BitKeeper was free for the Linux project under special terms. However, in 2005, a dispute arose between the Linux community and BitKeeper's company, and the free license was revoked. This left the Linux project without a version control system that could handle their enormous scale.</p>
+          <p>Linus Torvalds, dissatisfied with existing alternatives (CVS, SVN) which he felt were slow and poorly designed, decided to build a new system from scratch. He set out with very specific goals: it had to be extremely fast, it had to support distributed workflows (no single point of failure), it had to protect against data corruption, and it had to be free and open source. In just about two weeks of intense development, Torvalds created the first version of Git. By June 2005, Git was already managing the Linux kernel's codebase.</p>
+          <p>Git's name, according to Torvalds, is a British slang word meaning "unpleasant person" — and Torvalds jokingly said he names all his projects after himself. Over the following years, Git was developed by Junio Hamano (who has maintained it since 2005) and contributions from thousands of open-source developers.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item"><span class="tl-year">2002</span><span class="tl-event">Linux kernel adopts BitKeeper</span></div>
+          <div class="timeline-item"><span class="tl-year">2005</span><span class="tl-event">BitKeeper license revoked; Linus creates Git</span></div>
+          <div class="timeline-item"><span class="tl-year">2008</span><span class="tl-event">GitHub launches, built on top of Git</span></div>
+          <div class="timeline-item"><span class="tl-year">2012</span><span class="tl-event">GitHub reaches 1 million users</span></div>
+          <div class="timeline-item"><span class="tl-year">2018</span><span class="tl-event">Microsoft acquires GitHub for $7.5 billion</span></div>
+          <div class="timeline-item"><span class="tl-year">2023+</span><span class="tl-event">GitHub has 100+ million developers</span></div>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>1.4 What is Git?</h3>
+        <div class="content-block">
+          <p>Git is a <strong>free, open-source, distributed version control system</strong> designed to handle everything from small personal projects to very large projects with speed and efficiency. It is the most widely used version control system in the world today, used by virtually every major technology company and the majority of software developers globally.</p>
+          <p>Git operates primarily through your <strong>command line interface (CLI)</strong> — a text-based terminal where you type commands. While graphical user interfaces (GUIs) exist for Git, understanding the command line gives you complete control and is expected in professional environments. Git stores data in a special format — not as a list of file differences, but as a series of <strong>snapshots</strong> of your entire project at each point in time. This makes Git extremely fast and efficient.</p>
+          <p>When you initialize a Git repository (project), Git creates a hidden folder called <code>.git</code> at the root of your project. This folder contains the entire history of your project — every commit, every branch, every tag. This means your project's complete version history travels with it wherever you copy the folder. This is what makes Git "distributed" — you do not need a network connection to access the full history. You can commit, branch, merge, and view history entirely offline.</p>
+          <p>Git's core workflow revolves around three areas: the <strong>Working Directory</strong> (where you edit files), the <strong>Staging Area</strong> (where you prepare changes for a commit), and the <strong>Repository</strong> (where commits are permanently stored). Understanding this three-stage workflow is one of the most important foundational concepts in Git.</p>
+        </div>
+        <div class="diagram-box">
+          <div class="git-stages">
+            <div class="stage">
+              <div class="stage-icon">📝</div>
+              <div class="stage-name">Working Directory</div>
+              <div class="stage-desc">Where you edit files</div>
+            </div>
+            <div class="stage-arrow">→ git add →</div>
+            <div class="stage">
+              <div class="stage-icon">📦</div>
+              <div class="stage-name">Staging Area</div>
+              <div class="stage-desc">Selected changes queued</div>
+            </div>
+            <div class="stage-arrow">→ git commit →</div>
+            <div class="stage">
+              <div class="stage-icon">🗄️</div>
+              <div class="stage-name">Repository</div>
+              <div class="stage-desc">Permanent history stored</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>1.5 What is GitHub?</h3>
+        <div class="content-block">
+          <p>GitHub is a <strong>web-based platform and hosting service for Git repositories</strong>. While Git is the version control tool itself (a command-line program installed on your computer), GitHub is a cloud service that hosts your Git repositories online, making them accessible from anywhere and shareable with anyone.</p>
+          <p>Think of Git as the engine of a car and GitHub as the garage and showroom where you park, maintain, and show off your car. You can use Git without GitHub (storing your project only on your local machine), but you cannot use GitHub without Git (since GitHub is built entirely around Git's infrastructure).</p>
+          <p>GitHub provides a rich web interface that makes working with Git repositories much more visual and accessible. Beyond just hosting code, GitHub has evolved into a complete collaboration and project management platform. It offers features like <strong>Pull Requests</strong> (a formal process to propose, discuss, and review code changes), <strong>Issues</strong> (a bug tracker and task management system), <strong>GitHub Actions</strong> (automated workflows for building, testing, and deploying code), <strong>GitHub Pages</strong> (free website hosting from your repository), and <strong>GitHub Discussions</strong> (community forums within projects).</p>
+          <p>GitHub is also the world's largest platform for open-source software. Projects like Linux, React, TensorFlow, VS Code, Node.js, and millions of others are hosted on GitHub. Being active on GitHub is not just a technical skill — it is a professional portfolio that employers examine when evaluating candidates for software engineering roles.</p>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>1.6 Git vs GitHub</h3>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Aspect</th><th>Git</th><th>GitHub</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Type</td><td>Software / Command-line tool</td><td>Web platform / Cloud service</td></tr>
+              <tr><td>Creator</td><td>Linus Torvalds (2005)</td><td>Tom Preston-Werner, Chris Wanstrath (2008)</td></tr>
+              <tr><td>Where it runs</td><td>Locally on your computer</td><td>In the cloud (browser accessible)</td></tr>
+              <tr><td>Internet required?</td><td>No (works offline)</td><td>Yes (cloud-based)</td></tr>
+              <tr><td>Cost</td><td>Free and open source</td><td>Free tier + paid plans</td></tr>
+              <tr><td>Primary use</td><td>Version control, tracking changes</td><td>Hosting, collaboration, code review</td></tr>
+              <tr><td>Alternatives</td><td>Mercurial, SVN, Bazaar</td><td>GitLab, Bitbucket, Azure DevOps</td></tr>
+              <tr><td>Owned by</td><td>Open source community</td><td>Microsoft (since 2018)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>1.7 Why Companies Use GitHub</h3>
+        <div class="content-block">
+          <p>GitHub has become the <strong>de facto standard platform</strong> for software development at companies of all sizes — from two-person startups to Fortune 500 enterprises. Understanding why companies choose GitHub helps you appreciate the scale and importance of what you are learning.</p>
+          <p><strong>Centralized Code Repository:</strong> GitHub serves as the single source of truth for all code. Every team member, across offices and time zones, works from the same repository. This eliminates the "which version is the latest?" confusion that plagues organizations without a proper VCS.</p>
+          <p><strong>Code Review and Quality Gates:</strong> The Pull Request (PR) workflow forces all code changes to be reviewed by at least one other developer before being merged into the main codebase. This built-in quality gate catches bugs, enforces coding standards, and facilitates knowledge transfer. Many companies configure GitHub to require a minimum number of approvals, passing automated tests, and other checks before a PR can merge.</p>
+          <p><strong>Automation and CI/CD:</strong> GitHub Actions allows companies to automate their entire software delivery pipeline. When code is pushed, GitHub can automatically run tests, check code quality, build the application, and even deploy it to production — without any manual intervention. This is the core of modern DevOps practices.</p>
+          <p><strong>Developer Analytics and Insights:</strong> GitHub provides detailed analytics about repository activity, contributor statistics, code frequency, and more. Teams use this data to understand development velocity, identify bottlenecks, and plan sprints.</p>
+          <p><strong>Security:</strong> GitHub offers Dependabot (automatic security alerts and updates for vulnerable dependencies), code scanning (finding security vulnerabilities in code), and secret scanning (detecting accidentally committed API keys and passwords). These features are critical for enterprise security compliance.</p>
+        </div>
+      </div>
+
+      <!-- MODULE 1 END SECTION -->
+      <div class="module-end-section">
+        <div class="key-takeaways">
+          <h3>🔑 Key Takeaways — Module 1</h3>
+          <ul>
+            <li>Version control tracks every change to files, who made it, when, and why</li>
+            <li>Git is a <em>distributed</em> VCS — every developer has the full history locally</li>
+            <li>Git was created by Linus Torvalds in 2005 after a licensing dispute with BitKeeper</li>
+            <li>GitHub is a cloud hosting platform built on top of Git — they are different things</li>
+            <li>The three stages in Git: Working Directory → Staging Area → Repository</li>
+            <li>Companies use GitHub for code hosting, collaboration, CI/CD, and security</li>
+          </ul>
+        </div>
+        <div class="practice-exercise">
+          <h3>💪 Practical Exercise — Module 1</h3>
+          <ol>
+            <li>Open your browser and go to <code>github.com</code>. Browse the GitHub repository of a popular project like <code>facebook/react</code> or <code>torvalds/linux</code>.</li>
+            <li>Explore the "Commits" tab — notice how every change is recorded with an author, date, and message.</li>
+            <li>Look at the "Insights → Network" graph to see the branch history visually.</li>
+            <li>Write down in your own words: What is Git? What is GitHub? How are they different?</li>
+            <li>Research one alternative to GitHub (GitLab or Bitbucket) and compare their free tier features.</li>
+          </ol>
+        </div>
+        <div class="interview-questions">
+          <h3>🎤 Interview Questions — Module 1</h3>
+          <div class="qa-list">
+            <div class="qa-item">
+              <div class="question">Q1: What is version control and why is it important?</div>
+              <div class="answer">Version control is a system that records changes to files over time, allowing you to recall specific versions, track who made changes, collaborate without overwriting work, and recover from errors. It is important because it enables safe collaboration, maintains complete project history, supports experimentation via branches, and serves as an automated backup system.</div>
+            </div>
+            <div class="qa-item">
+              <div class="question">Q2: What is the difference between Git and GitHub?</div>
+              <div class="answer">Git is a free, open-source, distributed version control system that runs locally on your computer. GitHub is a web-based cloud platform that hosts Git repositories online, providing a UI, collaboration tools (pull requests, issues), automation (GitHub Actions), and code review features. Git works without GitHub, but GitHub requires Git.</div>
+            </div>
+            <div class="qa-item">
+              <div class="question">Q3: What does "distributed" mean in the context of Git?</div>
+              <div class="answer">In a distributed VCS like Git, every developer's local machine contains a complete copy of the entire project history. This means developers can commit, branch, merge, and view history without internet access. It also means there is no single point of failure — if the server goes down, every developer still has the full repository locally.</div>
+            </div>
+          </div>
+        </div>
+        <div class="common-mistakes">
+          <h3>❌ Common Mistakes to Avoid</h3>
+          <ul>
+            <li>Confusing Git with GitHub — they are fundamentally different things</li>
+            <li>Thinking you need internet access to use Git — you can work offline with local repositories</li>
+            <li>Not understanding the three stages (working directory, staging, repository) before trying commands</li>
+            <li>Underestimating version control for solo projects — you still benefit enormously from tracking your own history</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MODULE 2 ===================== -->
+    <section class="module-section" id="module2">
+      <div class="module-header">
+        <div class="module-number">02</div>
+        <div class="module-info">
+          <h2>Installing and Configuring Git</h2>
+          <p>Set up Git on your machine, create your GitHub account, and configure your identity.</p>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>2.1 Installing Git</h3>
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this, 'windows-install')">🪟 Windows</button>
+          <button class="tab-btn" onclick="switchTab(this, 'mac-install')">🍎 macOS</button>
+          <button class="tab-btn" onclick="switchTab(this, 'linux-install')">🐧 Linux</button>
+        </div>
+        <div class="tab-content active" id="windows-install">
+          <p>On Windows, the most common and recommended way to install Git is through the official Git for Windows installer, which also installs <strong>Git Bash</strong> — a terminal emulator that provides a Unix-like command-line environment on Windows.</p>
+          <div class="steps-list">
+            <div class="step"><span class="step-num">1</span><div>Go to <code>git-scm.com</code> and download the Windows installer</div></div>
+            <div class="step"><span class="step-num">2</span><div>Run the installer; use default settings for most options</div></div>
+            <div class="step"><span class="step-num">3</span><div>When prompted for "Adjusting your PATH environment," select "Git from the command line and also from 3rd-party software"</div></div>
+            <div class="step"><span class="step-num">4</span><div>For line ending conversions, select "Checkout Windows-style, commit Unix-style line endings"</div></div>
+            <div class="step"><span class="step-num">5</span><div>Open Git Bash and verify: <code>git --version</code></div></div>
+          </div>
+        </div>
+        <div class="tab-content" id="mac-install">
+          <p>On macOS, Git can be installed via Homebrew (recommended), Xcode Command Line Tools, or the official installer.</p>
+          <div class="code-block">
+            <div class="code-header"><span>Terminal</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code># Option 1: Using Homebrew (recommended)
+brew install git
+
+# Option 2: Install Xcode Command Line Tools (includes Git)
+xcode-select --install
+
+# Verify installation
+git --version</code></pre>
+          </div>
+        </div>
+        <div class="tab-content" id="linux-install">
+          <div class="code-block">
+            <div class="code-header"><span>Terminal</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code># Ubuntu / Debian
+sudo apt update
+sudo apt install git
+
+# Fedora / RHEL / CentOS
+sudo dnf install git
+
+# Arch Linux
+sudo pacman -S git
+
+# Verify
+git --version</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>2.2 Creating a GitHub Account</h3>
+        <div class="content-block">
+          <p>Creating a GitHub account is free and straightforward. However, your GitHub username is a professional identifier — think of it as your developer brand name. It will appear on your contributions, in your profile URL (<code>github.com/yourusername</code>), and on every commit you push. Choose a username that is professional, memorable, and ideally close to your real name.</p>
+        </div>
+        <div class="steps-list">
+          <div class="step"><span class="step-num">1</span><div>Visit <code>github.com</code> and click "Sign Up"</div></div>
+          <div class="step"><span class="step-num">2</span><div>Enter your email, create a strong password, and choose a username</div></div>
+          <div class="step"><span class="step-num">3</span><div>Verify your email address via the confirmation email</div></div>
+          <div class="step"><span class="step-num">4</span><div>Complete the optional onboarding quiz (helps GitHub personalize recommendations)</div></div>
+          <div class="step"><span class="step-num">5</span><div>Enable Two-Factor Authentication (2FA) immediately — this is critical for security</div></div>
+          <div class="step"><span class="step-num">6</span><div>Set up a profile picture and bio (start building your professional presence)</div></div>
+        </div>
+        <div class="highlight-box warning-box">
+          <strong>⚠️ Username Tips:</strong> Avoid numbers at the end (john123), avoid underscores if possible, keep it short and professional. Examples: <code>johnsmith</code>, <code>jsmith-dev</code>, <code>j-smith</code>.
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>2.3 Git Configuration</h3>
+        <div class="content-block">
+          <p>Before you can make your first commit, you need to tell Git who you are. Git associates your name and email address with every commit you make. This information is embedded permanently into the commit history and is how GitHub knows to link your commits to your account. This configuration is done using the <code>git config</code> command.</p>
+          <p>Git has three levels of configuration: <strong>System</strong> (applies to all users on the computer), <strong>Global</strong> (applies to all repositories for your user), and <strong>Local</strong> (applies only to the current repository). For personal setup, you almost always use <code>--global</code>.</p>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>Git Bash / Terminal</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Set your name (use your real name — it will be in commits)
+git config --global user.name "John Smith"
+
+# Set your email (MUST match your GitHub account email)
+git config --global user.email "john@example.com"
+
+# Set your preferred text editor (VS Code)
+git config --global core.editor "code --wait"
+
+# Set default branch name to 'main' (modern standard)
+git config --global init.defaultBranch main
+
+# Enable color output for readability
+git config --global color.ui auto
+
+# View all your current settings
+git config --list
+
+# View a specific setting
+git config user.name</code></pre>
+        </div>
+        <div class="highlight-box info-box">
+          <strong>📌 Important:</strong> Your email in git config MUST match the email on your GitHub account. Otherwise, your commits won't be linked to your GitHub profile and won't appear in your contribution graph.
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>2.4 Understanding Git Bash and Terminal</h3>
+        <div class="content-block">
+          <p>Git Bash (on Windows) and the Terminal (on macOS/Linux) are your command-line interfaces — text-based environments where you type commands to interact with your operating system and Git. Unlike clicking buttons in a graphical app, the command line gives you precise, powerful control over what Git does.</p>
+          <p>Learning the terminal feels intimidating at first, but you only need a handful of commands to be productive. The terminal follows a pattern: you type a command and press Enter, and the system executes it and shows you the output. Commands take the form of: <code>command [options] [arguments]</code>. For example, <code>git add .</code> is the command <code>git</code>, the subcommand <code>add</code>, and the argument <code>.</code> (which means "everything in the current directory").</p>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>Essential Terminal Commands</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>pwd          # Print Working Directory — shows where you are
+ls           # List files in current directory
+ls -la       # List all files including hidden ones
+cd foldername  # Change Directory into a folder
+cd ..        # Go up one level
+mkdir myproject  # Make a new directory/folder
+touch file.txt   # Create a new empty file
+clear        # Clear the terminal screen
+cat file.txt # Display file contents</code></pre>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>2.5 SSH Key Setup (Connecting Git to GitHub)</h3>
+        <div class="content-block">
+          <p>To securely communicate between your local Git and your GitHub account without entering your password every time, you set up an <strong>SSH key pair</strong>. SSH (Secure Shell) uses a pair of cryptographic keys — a private key (kept on your computer) and a public key (shared with GitHub). When you connect, GitHub verifies your identity using these keys without ever transmitting your password.</p>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>SSH Setup Steps</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Step 1: Generate SSH key pair
+ssh-keygen -t ed25519 -C "your_email@example.com"
+# Press Enter to accept defaults
+
+# Step 2: Start the ssh-agent
+eval "$(ssh-agent -s)"
+
+# Step 3: Add your key to the agent
+ssh-add ~/.ssh/id_ed25519
+
+# Step 4: Copy your PUBLIC key to clipboard
+cat ~/.ssh/id_ed25519.pub
+# Copy the output
+
+# Step 5: Go to GitHub → Settings → SSH and GPG keys → New SSH key
+# Paste the public key and save
+
+# Step 6: Test the connection
+ssh -T git@github.com
+# Should see: "Hi username! You've successfully authenticated"</code></pre>
+        </div>
+      </div>
+
+      <div class="module-end-section">
+        <div class="key-takeaways">
+          <h3>🔑 Key Takeaways — Module 2</h3>
+          <ul>
+            <li>Git can be installed on Windows (Git Bash), macOS (Homebrew), and Linux (package manager)</li>
+            <li>Always configure your name and email before your first commit</li>
+            <li>Your git config email MUST match your GitHub account email for contributions to be credited</li>
+            <li>SSH keys provide secure, password-free authentication between your machine and GitHub</li>
+            <li>The <code>--global</code> flag sets configuration for all repositories on your machine</li>
+          </ul>
+        </div>
+        <div class="practice-exercise">
+          <h3>💪 Practical Exercise — Module 2</h3>
+          <ol>
+            <li>Install Git on your operating system and verify with <code>git --version</code></li>
+            <li>Create a GitHub account with a professional username</li>
+            <li>Configure your global git name and email</li>
+            <li>Set up an SSH key and connect it to your GitHub account</li>
+            <li>Test the SSH connection with <code>ssh -T git@github.com</code></li>
+            <li>Run <code>git config --list</code> and take a screenshot of your settings</li>
+          </ol>
+        </div>
+        <div class="interview-questions">
+          <h3>🎤 Interview Questions — Module 2</h3>
+          <div class="qa-list">
+            <div class="qa-item">
+              <div class="question">Q1: What happens if your git config email doesn't match your GitHub account email?</div>
+              <div class="answer">Your commits will still be made, but they won't be linked to your GitHub profile. This means they won't appear in your contribution graph, won't be credited to your account in repository statistics, and your avatar won't show next to commits in the GitHub UI. Always ensure the emails match.</div>
+            </div>
+            <div class="qa-item">
+              <div class="question">Q2: What is SSH and why is it preferred over HTTPS for GitHub?</div>
+              <div class="answer">SSH (Secure Shell) is a cryptographic protocol for secure network communication. With SSH key authentication, you never transmit your password and don't need to enter credentials with each git push/pull. HTTPS requires entering a Personal Access Token (PAT) each time or storing credentials. SSH is more secure and convenient for frequent use.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MODULE 3 ===================== -->
+    <section class="module-section" id="module3">
+      <div class="module-header">
+        <div class="module-number">03</div>
+        <div class="module-info">
+          <h2>Git Fundamentals — Core Commands</h2>
+          <p>Master the essential Git commands with detailed explanations, syntax, and real-world examples.</p>
+        </div>
+      </div>
+
+      <!-- git init -->
+      <div class="topic-card command-card">
+        <div class="command-badge">git init</div>
+        <h3>3.1 git init — Initialize a Repository</h3>
+        <div class="content-block">
+          <p>The <code>git init</code> command is the very first command you run when starting a new project with Git. It <strong>initializes a new Git repository</strong> in your current directory by creating the hidden <code>.git</code> folder. This folder is the heart of your Git repository — it stores the entire version history, configuration, and all Git data. Without this folder, the directory is just a regular folder; with it, Git tracks every change.</p>
+          <p>You only need to run <code>git init</code> once per project, at the very beginning. If you accidentally run it in the wrong directory, you can undo it by deleting the <code>.git</code> folder (<code>rm -rf .git</code>). Think of <code>git init</code> as "turning on the camera" for your project — from this point forward, Git is watching and ready to record.</p>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>Syntax & Example</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Syntax
+git init [directory-name]
+
+# Example 1: Initialize Git in your CURRENT directory
+mkdir my-project
+cd my-project
+git init
+# Output: Initialized empty Git repository in /path/to/my-project/.git/
+
+# Example 2: Create and initialize a new directory in one command
+git init my-new-app
+cd my-new-app
+
+# Verify the .git folder exists
+ls -la  # You'll see the .git folder</code></pre>
+        </div>
+        <div class="highlight-box purpose-box">
+          <strong>Real-World Use Case:</strong> You start a new web development project. You create a project folder, run <code>git init</code>, and immediately begin tracking your HTML, CSS, and JavaScript files. Every change you make can now be committed, giving you a complete history of your project's evolution.
+        </div>
+      </div>
+
+      <!-- git clone -->
+      <div class="topic-card command-card">
+        <div class="command-badge">git clone</div>
+        <h3>3.2 git clone — Clone a Repository</h3>
+        <div class="content-block">
+          <p><code>git clone</code> creates a <strong>complete copy of an existing remote repository</strong> on your local machine. Unlike <code>git init</code> (which starts fresh), <code>git clone</code> downloads everything — all files, all branches, and the entire commit history. It automatically sets up a connection to the original repository (called "origin"), so you can push and pull changes.</p>
+          <p>Cloning is how you "get" an existing project — whether it's your own project from GitHub, a team project from your company's repository, or an open-source project you want to contribute to. After cloning, you have a full local copy and can start working immediately.</p>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>Syntax & Example</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Syntax
+git clone &lt;repository-url&gt; [local-directory-name]
+
+# Clone using HTTPS
+git clone https://github.com/username/repository-name.git
+
+# Clone using SSH (recommended after SSH setup)
+git clone git@github.com:username/repository-name.git
+
+# Clone into a specific folder name
+git clone https://github.com/facebook/react.git my-react-copy
+
+# Clone a specific branch
+git clone -b develop https://github.com/username/repo.git
+
+# Clone with limited history (faster for large repos)
+git clone --depth 1 https://github.com/torvalds/linux.git</code></pre>
+        </div>
+      </div>
+
+      <!-- git status -->
+      <div class="topic-card command-card">
+        <div class="command-badge">git status</div>
+        <h3>3.3 git status — Check Repository Status</h3>
+        <div class="content-block">
+          <p><code>git status</code> is arguably the command you will use most frequently. It shows you the <strong>current state of your working directory and staging area</strong> — which files have been modified, which are staged for commit, which are new (untracked), and which have been deleted. It is your "what's going on right now?" command.</p>
+          <p>Running <code>git status</code> before almost every other operation is a great habit. It tells you exactly where you are and prevents mistakes like accidentally committing the wrong files or forgetting to stage changes. The output is color-coded: red for unstaged changes, green for staged changes.</p>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>Syntax & Example</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Syntax
+git status
+
+# Short format (one line per file)
+git status -s
+# M  = Modified and staged (green M)
+# M  = Modified but not staged (red M)
+# A  = New file staged
+# ?? = Untracked file
+
+# Example output after modifying index.html
+# On branch main
+# Changes not staged for commit:
+#   (use "git add &lt;file&gt;..." to update what will be committed)
+#         modified:   index.html
+# Untracked files:
+#         style.css</code></pre>
+        </div>
+      </div>
+
+      <!-- git add -->
+      <div class="topic-card command-card">
+        <div class="command-badge">git add</div>
+        <h3>3.4 git add — Stage Changes</h3>
+        <div class="content-block">
+          <p><code>git add</code> moves changes from your working directory to the <strong>staging area</strong> (also called the "index"). Think of the staging area as a waiting room — changes sit here until you are ready to commit them. This two-step process (add → commit) gives you fine-grained control over exactly what goes into each commit. You can modify five files but choose to stage and commit only two of them, keeping the other three as works in progress.</p>
+          <p>The staging area is one of Git's most powerful and misunderstood features. It lets you craft logical, coherent commits rather than lumping all your current work into one giant change. Good practice is to make each commit represent one logical change or fix, which makes the history much easier to read and understand.</p>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>Syntax & Example</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Stage a specific file
+git add index.html
+
+# Stage multiple specific files
+git add index.html style.css app.js
+
+# Stage ALL changes in current directory (most common)
+git add .
+
+# Stage all changes in the entire repository
+git add -A
+
+# Stage parts of a file interactively (advanced)
+git add -p index.html
+
+# Unstage a file (remove from staging but keep changes)
+git restore --staged index.html</code></pre>
+        </div>
+      </div>
+
+      <!-- git commit -->
+      <div class="topic-card command-card">
+        <div class="command-badge">git commit</div>
+        <h3>3.5 git commit — Save Changes to History</h3>
+        <div class="content-block">
+          <p><code>git commit</code> takes everything in your staging area and <strong>permanently saves it as a snapshot in your repository's history</strong>. A commit is like taking a photograph of your project at a specific moment. Each commit has a unique identifier (a SHA-1 hash like <code>a3f72b8</code>), your name and email, a timestamp, and most importantly — a <strong>commit message</strong> describing what changed and why.</p>
+          <p>Writing good commit messages is a professional skill. A good commit message follows the convention: a short summary (max 72 characters) on the first line, optionally followed by a blank line and a detailed description. The summary should complete the sentence: "If applied, this commit will..." Examples of good commit messages: <em>"Fix: resolve null pointer exception in user login"</em>, <em>"Feat: add dark mode toggle to settings page"</em>, <em>"Docs: update README with installation instructions"</em>.</p>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>Syntax & Example</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Basic commit with inline message
+git commit -m "Add homepage navigation menu"
+
+# Commit with detailed message (opens text editor)
+git commit
+
+# Stage all tracked files AND commit in one command
+git commit -am "Fix login validation bug"
+# Note: -a only stages MODIFIED files, not new untracked files
+
+# Amend the last commit (fix message or add forgotten files)
+git commit --amend -m "Corrected commit message"
+# Warning: Never amend commits already pushed to shared branches!
+
+# Conventional commit format (industry standard)
+# type(scope): description
+git commit -m "feat(auth): add OAuth2 Google login"
+git commit -m "fix(ui): correct button alignment on mobile"
+git commit -m "docs(readme): add API documentation section"</code></pre>
+        </div>
+        <div class="highlight-box info-box">
+          <strong>Conventional Commits:</strong> Many companies follow the Conventional Commits specification. Common types: <code>feat</code> (new feature), <code>fix</code> (bug fix), <code>docs</code> (documentation), <code>style</code> (formatting), <code>refactor</code> (code restructuring), <code>test</code> (adding tests), <code>chore</code> (maintenance).
+        </div>
+      </div>
+
+      <!-- git push -->
+      <div class="topic-card command-card">
+        <div class="command-badge">git push</div>
+        <h3>3.6 git push — Upload to Remote</h3>
+        <div class="content-block">
+          <p><code>git push</code> <strong>uploads your local commits to a remote repository</strong> (like GitHub). Until you push, your commits exist only on your local machine — no one else can see them, and they are not backed up to GitHub. Pushing makes your work visible to collaborators and triggers any CI/CD automation configured in the repository.</p>
+          <p>The first time you push a new branch, you need to set the "upstream" remote branch with <code>-u origin branch-name</code>. After that, you can simply run <code>git push</code> without arguments. "Origin" is the default name Git gives to the remote repository you cloned from or linked to.</p>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>Syntax & Example</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Push current branch to its upstream (after -u is set)
+git push
+
+# First-time push: set upstream and push
+git push -u origin main
+git push -u origin feature/login
+
+# Push a specific branch
+git push origin feature/new-ui
+
+# Push all local branches
+git push --all origin
+
+# Force push (DANGEROUS — only for personal branches)
+git push --force origin feature/my-branch
+# Or safer force push (won't overwrite others' changes)
+git push --force-with-lease origin feature/my-branch</code></pre>
+        </div>
+      </div>
+
+      <!-- git pull -->
+      <div class="topic-card command-card">
+        <div class="command-badge">git pull</div>
+        <h3>3.7 git pull — Download and Merge Changes</h3>
+        <div class="content-block">
+          <p><code>git pull</code> does two things in one command: it <strong>fetches changes from the remote repository</strong> and immediately <strong>merges them into your current local branch</strong>. It is the standard way to update your local copy with the latest changes your teammates have pushed. In team environments, you should run <code>git pull</code> at the start of every working session to ensure you are working with the most current code.</p>
+          <p>Important: <code>git pull</code> = <code>git fetch</code> + <code>git merge</code>. Some developers prefer to use <code>git fetch</code> followed by a manual review before merging, which gives more control. However, for straightforward daily updates, <code>git pull</code> is perfectly appropriate.</p>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>Syntax & Example</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Pull latest changes from current branch's upstream
+git pull
+
+# Pull from specific remote and branch
+git pull origin main
+
+# Pull and rebase instead of merge (cleaner history)
+git pull --rebase origin main
+
+# Pull all branches
+git pull --all</code></pre>
+        </div>
+      </div>
+
+      <!-- git fetch -->
+      <div class="topic-card command-card">
+        <div class="command-badge">git fetch</div>
+        <h3>3.8 git fetch — Download Without Merging</h3>
+        <div class="content-block">
+          <p><code>git fetch</code> downloads changes from the remote repository but does <strong>NOT merge them</strong> into your working files. It updates your local knowledge of what the remote looks like, without actually changing any files you are working on. This is useful when you want to see what others have pushed before deciding whether and how to integrate those changes.</p>
+          <p>After fetching, you can use <code>git log origin/main</code> to see what changed remotely, and then decide to merge, rebase, or take a different action. This is considered a safer, more deliberate workflow than blind-pulling.</p>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>Syntax & Example</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Fetch from all remotes
+git fetch
+
+# Fetch from specific remote
+git fetch origin
+
+# Fetch a specific branch
+git fetch origin main
+
+# After fetching, see what changed
+git log origin/main --oneline
+
+# Then merge manually if ready
+git merge origin/main</code></pre>
+        </div>
+      </div>
+
+      <!-- git log -->
+      <div class="topic-card command-card">
+        <div class="command-badge">git log</div>
+        <h3>3.9 git log — View Commit History</h3>
+        <div class="content-block">
+          <p><code>git log</code> displays the <strong>commit history</strong> of your repository in reverse chronological order (newest first). Each entry shows the commit hash, author, date, and message. The log is your project's story — every decision, fix, and feature ever added is recorded here. Knowing how to read and filter the log is essential for debugging, code reviews, and understanding a project's evolution.</p>
+          <p>The default output can be verbose. Git provides many formatting options to make the log more readable. The <code>--oneline</code> flag is extremely commonly used for a compact view. <code>--graph</code> draws a visual branch and merge diagram. Learning to use these options helps you quickly navigate even very large project histories.</p>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>Syntax & Example</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Full log (press Q to exit)
+git log
+
+# One-line format (most commonly used)
+git log --oneline
+
+# Beautiful graph view
+git log --oneline --graph --all --decorate
+
+# Limit to last N commits
+git log -5 --oneline
+
+# Log by a specific author
+git log --author="John Smith"
+
+# Log changes to a specific file
+git log -- index.html
+
+# Log changes in a date range
+git log --since="2024-01-01" --until="2024-12-31"
+
+# Search commit messages
+git log --grep="fix"
+
+# Show changes introduced by each commit
+git log -p</code></pre>
+        </div>
+      </div>
+
+      <!-- git diff -->
+      <div class="topic-card command-card">
+        <div class="command-badge">git diff</div>
+        <h3>3.10 git diff — Compare Changes</h3>
+        <div class="content-block">
+          <p><code>git diff</code> shows you <strong>the exact line-by-line differences</strong> between different states of your files. It uses a special format: lines starting with <code>+</code> (shown in green) are additions, and lines starting with <code>-</code> (shown in red) are deletions. Lines with no prefix are unchanged context.</p>
+          <p>There are several different things you might want to compare: your working directory vs. the staging area, the staging area vs. the last commit, or two specific commits/branches against each other. Understanding which comparison mode to use helps you review your work before committing and understand exactly what changed between any two points in history.</p>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>Syntax & Example</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Compare working directory vs staging area (unstaged changes)
+git diff
+
+# Compare staging area vs last commit (staged changes)
+git diff --staged
+# (also works: git diff --cached)
+
+# Compare two commits
+git diff abc123 def456
+
+# Compare two branches
+git diff main feature/new-login
+
+# Compare specific file across branches
+git diff main..feature/ui -- index.html
+
+# Summary of changes (just filenames)
+git diff --stat main feature/new-login</code></pre>
+        </div>
+      </div>
+
+      <div class="module-end-section">
+        <div class="key-takeaways">
+          <h3>🔑 Key Takeaways — Module 3</h3>
+          <ul>
+            <li><code>git init</code> — starts a new repository (creates .git folder)</li>
+            <li><code>git clone</code> — copies a complete remote repository to your machine</li>
+            <li><code>git status</code> — your most-used command; shows current state</li>
+            <li><code>git add</code> — stages selected changes for the next commit</li>
+            <li><code>git commit</code> — permanently saves staged changes with a message</li>
+            <li><code>git push</code> — uploads local commits to the remote (GitHub)</li>
+            <li><code>git pull</code> — downloads remote changes AND merges them (fetch + merge)</li>
+            <li><code>git fetch</code> — downloads remote changes WITHOUT merging</li>
+            <li><code>git log</code> — shows commit history with various formatting options</li>
+            <li><code>git diff</code> — shows exact line-by-line differences between states</li>
+          </ul>
+        </div>
+        <div class="practice-exercise">
+          <h3>💪 Practical Exercise — Module 3 (First Real Project)</h3>
+          <ol>
+            <li>Create a new folder called <code>my-first-git-project</code> and run <code>git init</code></li>
+            <li>Create a file <code>index.html</code> with basic HTML content</li>
+            <li>Run <code>git status</code> — observe the "untracked" file</li>
+            <li>Run <code>git add index.html</code>, then <code>git status</code> again</li>
+            <li>Run <code>git commit -m "feat: add initial homepage HTML"</code></li>
+            <li>Modify <code>index.html</code>, then run <code>git diff</code> to see changes</li>
+            <li>Create a repository on GitHub and push your local project to it</li>
+            <li>Run <code>git log --oneline --graph</code> to see your history</li>
+          </ol>
+        </div>
+        <div class="interview-questions">
+          <h3>🎤 Interview Questions — Module 3</h3>
+          <div class="qa-list">
+            <div class="qa-item">
+              <div class="question">Q1: What is the difference between git pull and git fetch?</div>
+              <div class="answer">Both download changes from the remote. git fetch downloads the changes but does NOT merge them into your working branch — it updates your remote-tracking branches only. git pull = git fetch + git merge. Use git fetch when you want to review changes before integrating; use git pull when you're ready to update immediately.</div>
+            </div>
+            <div class="qa-item">
+              <div class="question">Q2: Why do we need the staging area (git add)? Why not commit directly?</div>
+              <div class="answer">The staging area gives you fine-grained control over what goes into each commit. You might have changed 10 files but only want to commit 3 of them as one logical change. You can stage exactly those 3 files and commit them, creating a clean, meaningful commit. You can even stage parts of a file with git add -p. This results in a much cleaner, more useful commit history.</div>
+            </div>
+            <div class="qa-item">
+              <div class="question">Q3: What information does a Git commit store?</div>
+              <div class="answer">A commit stores: a unique SHA-1 hash identifier, a snapshot of all staged files (not just the diff), the commit message, the author's name and email, the timestamp, and a reference to the parent commit(s). This chain of parent references is how Git constructs the commit history graph.</div>
+            </div>
+          </div>
+        </div>
+        <div class="common-mistakes">
+          <h3>❌ Common Mistakes to Avoid</h3>
+          <ul>
+            <li>Running <code>git add .</code> without checking <code>git status</code> first — you might stage unintended files</li>
+            <li>Writing vague commit messages like "fix stuff" or "update" — always be descriptive</li>
+            <li>Using <code>git push --force</code> on shared branches — this can overwrite teammates' work</li>
+            <li>Forgetting to <code>git pull</code> before starting work — leads to merge conflicts</li>
+            <li>Committing sensitive data like passwords, API keys, or credentials</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MODULE 4 ===================== -->
+    <section class="module-section" id="module4">
+      <div class="module-header">
+        <div class="module-number">04</div>
+        <div class="module-info">
+          <h2>Understanding Repositories</h2>
+          <p>Deep dive into local repositories, remote repositories, and how they work together.</p>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>4.1 Local vs Remote Repositories</h3>
+        <div class="content-block">
+          <p>A <strong>local repository</strong> is the copy of your project that lives on your own computer. It is the <code>.git</code> folder in your project directory, containing the full history and all branches. You can commit, branch, merge, and perform virtually all Git operations locally without any internet connection. The local repository is where you do all your actual development work.</p>
+          <p>A <strong>remote repository</strong> is a version of your project hosted on a server — typically GitHub, GitLab, or Bitbucket. The remote serves as the central hub that all team members sync to. When you push, you upload local commits to the remote. When you pull, you download remote commits to your local. The most common remote name is <strong>"origin"</strong> — the default name Git assigns to the remote you cloned from.</p>
+          <p>You can have multiple remotes. For example, when contributing to open-source projects, you typically have two remotes: <code>origin</code> (your personal fork on GitHub) and <code>upstream</code> (the original project's repository). This pattern is covered in detail in Module 9 on Open Source Contributions.</p>
+        </div>
+        <div class="diagram-box">
+          <div class="repo-diagram">
+            <div class="repo-box local">
+              <div class="repo-icon">💻</div>
+              <div class="repo-label">Local Repository</div>
+              <div class="repo-detail">Your computer<br>.git folder<br>Full history</div>
+            </div>
+            <div class="repo-arrows">
+              <div class="arrow-label">git push ↑</div>
+              <div class="double-arrow">⇅</div>
+              <div class="arrow-label">↓ git pull</div>
+            </div>
+            <div class="repo-box remote">
+              <div class="repo-icon">☁️</div>
+              <div class="repo-label">Remote (GitHub)</div>
+              <div class="repo-detail">Cloud server<br>Shared with team<br>Backup</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>4.2 Repository Structure</h3>
+        <div class="content-block">
+          <p>Understanding what's inside a typical Git repository helps you navigate, organize, and maintain projects professionally. A well-structured repository makes onboarding new team members easy and demonstrates professionalism.</p>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>Typical Repository Structure</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>my-project/
+├── .git/                 # Hidden Git folder (never edit manually)
+│   ├── HEAD              # Points to current branch
+│   ├── config            # Repository-specific config
+│   ├── objects/          # All commits, trees, blobs
+│   └── refs/             # Branch and tag references
+├── .github/              # GitHub-specific files
+│   ├── workflows/        # GitHub Actions automation
+│   ├── ISSUE_TEMPLATE/   # Issue templates
+│   └── PULL_REQUEST_TEMPLATE.md
+├── src/                  # Source code
+├── tests/                # Test files
+├── docs/                 # Documentation
+├── .gitignore            # Files Git should ignore
+├── README.md             # Project description (rendered on GitHub)
+├── LICENSE               # License file
+├── CONTRIBUTING.md       # How to contribute
+└── package.json          # (for Node.js projects) dependencies</code></pre>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>4.3 Repository Best Practices</h3>
+        <div class="best-practices-grid">
+          <div class="bp-card">
+            <div class="bp-icon">📝</div>
+            <h4>Always write a README</h4>
+            <p>Every repository needs a README.md explaining what the project does, how to install it, and how to use it. This is the first thing anyone sees.</p>
+          </div>
+          <div class="bp-card">
+            <div class="bp-icon">🚫</div>
+            <h4>Use .gitignore</h4>
+            <p>Never commit node_modules, build artifacts, .env files with secrets, IDE configuration files, or OS-generated files (.DS_Store, Thumbs.db).</p>
+          </div>
+          <div class="bp-card">
+            <div class="bp-icon">🔒</div>
+            <h4>Never commit secrets</h4>
+            <p>API keys, passwords, database credentials, and tokens must NEVER be committed. Use environment variables and .env files (added to .gitignore).</p>
+          </div>
+          <div class="bp-card">
+            <div class="bp-icon">🏷️</div>
+            <h4>Use meaningful names</h4>
+            <p>Repository names should be lowercase with hyphens: <code>my-portfolio-site</code>, <code>weather-app</code>, <code>student-management-system</code>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="module-end-section">
+        <div class="key-takeaways">
+          <h3>🔑 Key Takeaways — Module 4</h3>
+          <ul>
+            <li>Local repo is on your machine (.git folder); remote repo is on GitHub/server</li>
+            <li>"origin" is the default name for the primary remote repository</li>
+            <li>A repository can have multiple remotes (origin, upstream, staging)</li>
+            <li>The .git folder contains the entire project history — never manually edit it</li>
+            <li>Always include README.md, .gitignore, and LICENSE in your repositories</li>
+            <li>Never commit secrets, credentials, or sensitive environment files</li>
+          </ul>
+        </div>
+        <div class="practice-exercise">
+          <h3>💪 Practical Exercise — Module 4</h3>
+          <ol>
+            <li>Create a new repository on GitHub with a README and .gitignore (Node.js template)</li>
+            <li>Clone it locally and explore the <code>.git</code> folder structure</li>
+            <li>Add a remote to an existing local project: <code>git remote add origin &lt;url&gt;</code></li>
+            <li>List all remotes: <code>git remote -v</code></li>
+            <li>Create a second remote called "backup": <code>git remote add backup &lt;url2&gt;</code></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MODULE 5 ===================== -->
+    <section class="module-section" id="module5">
+      <div class="module-header">
+        <div class="module-number">05</div>
+        <div class="module-info">
+          <h2>Branching and Collaboration</h2>
+          <p>Understand Git's most powerful feature — branches — and how they enable safe parallel development.</p>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>5.1 What is a Branch?</h3>
+        <div class="content-block">
+          <p>A <strong>branch</strong> in Git is an independent line of development — a lightweight, movable pointer to a specific commit. Think of your project as a river: the main river (your <code>main</code> branch) flows forward continuously. When a developer needs to work on a new feature, they create a "tributary" branch — a parallel stream that diverges from the main river. Work can proceed in this tributary without disturbing the main river, and when the feature is complete and tested, the tributary merges back into the main river.</p>
+          <p>Technically, a branch is just a text file in your <code>.git/refs/heads/</code> folder that contains the SHA-1 hash of the latest commit on that branch. This makes branches <strong>incredibly lightweight</strong> — creating a new branch takes milliseconds and costs almost no storage. This is one of Git's most significant advantages over older version control systems where branching was expensive and slow.</p>
+          <p>Git always has a special pointer called <strong>HEAD</strong> that indicates which branch you are currently on. When you make a commit, the branch HEAD is pointing to automatically moves forward to the new commit. This is how branches "grow" forward with each commit.</p>
+        </div>
+        <div class="diagram-box">
+          <div class="branch-diagram">
+            <div class="bd-row">
+              <div class="bd-commit">C1</div>
+              <div class="bd-line"></div>
+              <div class="bd-commit">C2</div>
+              <div class="bd-line"></div>
+              <div class="bd-commit">C3</div>
+              <div class="bd-line"></div>
+              <div class="bd-commit">C6</div>
+              <div class="bd-tag">main</div>
+            </div>
+            <div class="bd-branch-line"></div>
+            <div class="bd-row feature-row">
+              <div class="bd-spacer"></div>
+              <div class="bd-commit feature">C4</div>
+              <div class="bd-line feature-line"></div>
+              <div class="bd-commit feature">C5</div>
+              <div class="bd-tag feature-tag">feature/login</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>5.2 Branch Commands</h3>
+        <div class="code-block">
+          <div class="code-header"><span>Branch Operations</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># View all branches (* marks current branch)
+git branch
+
+# View all branches including remote
+git branch -a
+
+# Create a new branch
+git branch feature/user-authentication
+
+# Switch to a branch
+git checkout feature/user-authentication
+# Modern syntax (Git 2.23+)
+git switch feature/user-authentication
+
+# Create AND switch to new branch (most common)
+git checkout -b feature/payment-integration
+# Modern syntax
+git switch -c feature/payment-integration
+
+# Rename a branch
+git branch -m old-name new-name
+
+# Delete a branch (safe — won't delete unmerged branches)
+git branch -d feature/completed-feature
+
+# Force delete (even if unmerged)
+git branch -D feature/abandoned-feature
+
+# Push branch to remote
+git push -u origin feature/user-authentication
+
+# Delete remote branch
+git push origin --delete feature/old-branch</code></pre>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>5.3 Merging Branches</h3>
+        <div class="content-block">
+          <p>When feature development is complete, the branch is <strong>merged</strong> back into the main branch. Git has two main types of merge strategies:</p>
+          <p><strong>Fast-Forward Merge:</strong> If the main branch hasn't changed since the feature branch was created, Git simply moves the main branch pointer forward to the feature branch's latest commit. No new merge commit is created. The history looks linear and clean.</p>
+          <p><strong>Three-Way Merge:</strong> If both branches have new commits since they diverged, Git creates a new <strong>merge commit</strong> that has two parents — one from each branch. This preserves the complete history of both lines of development and is the most common type of merge in team environments.</p>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>Merge Commands</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Step 1: Switch to the branch you want to merge INTO
+git switch main
+
+# Step 2: Merge the feature branch
+git merge feature/user-authentication
+
+# Merge with a commit message (no-fast-forward)
+git merge --no-ff feature/payment -m "Merge: add payment integration"
+
+# Squash all feature commits into one commit
+git merge --squash feature/cleanup
+git commit -m "feat: implement user profile cleanup"
+
+# Abort a merge in progress (if conflicts arise)
+git merge --abort</code></pre>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>5.4 Merge Conflicts</h3>
+        <div class="content-block">
+          <p>A <strong>merge conflict</strong> occurs when two branches have made different changes to the same lines of the same file, and Git cannot automatically decide which version to keep. Git stops the merge and marks the conflicting sections in the file with special markers. You must manually edit the file to resolve the conflict, then stage and commit the resolved file.</p>
+          <p>Conflict markers look like this in the file: <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> marks your current branch's changes, <code>=======</code> is the separator, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature/login</code> marks the incoming branch's changes. Everything between these markers is the conflicting code you need to resolve manually.</p>
+          <p>Merge conflicts are a normal, expected part of collaborative development — not errors or failures. Learning to resolve them calmly and correctly is an essential professional skill. Most code editors (VS Code, IntelliJ) have built-in merge conflict resolution tools that show the conflicting sections visually with Accept/Reject buttons.</p>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>Conflict Example and Resolution</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># What a conflict looks like in a file:
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD (current branch - main)
+  &lt;h1&gt;Welcome to our website&lt;/h1&gt;
+=======
+  &lt;h1&gt;Welcome to the platform&lt;/h1&gt;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature/new-hero (incoming branch)
+
+# Resolution: Choose one, combine both, or rewrite:
+  &lt;h1&gt;Welcome to our platform&lt;/h1&gt;
+
+# After resolving all conflicts:
+git add index.html           # Stage resolved files
+git commit                   # Complete the merge
+                             # (message auto-generated)
+
+# Check merge status
+git status                   # Should show clean working tree</code></pre>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>5.5 Collaboration Strategies</h3>
+        <div class="content-block">
+          <p><strong>Feature Branch Workflow</strong> is the most common strategy: every new feature, bug fix, or change gets its own branch. The main branch always contains only production-ready, stable code. Developers create a feature branch, do their work, push to GitHub, open a Pull Request, get code reviewed, and merge when approved.</p>
+          <p><strong>GitFlow Workflow</strong> is a more structured strategy used in large projects with regular release cycles. It involves long-lived branches: <code>main</code> (production), <code>develop</code> (integration), <code>feature/*</code> (individual features), <code>release/*</code> (release preparation), and <code>hotfix/*</code> (urgent production fixes).</p>
+          <p><strong>GitHub Flow</strong> is a simplified version of GitFlow, ideal for continuous deployment environments. It uses only <code>main</code> and feature branches. When a feature branch is merged to main, it is deployed immediately. This is the workflow used by GitHub itself.</p>
+        </div>
+      </div>
+
+      <div class="module-end-section">
+        <div class="key-takeaways">
+          <h3>🔑 Key Takeaways — Module 5</h3>
+          <ul>
+            <li>A branch is a lightweight pointer to a commit — cheap to create and delete</li>
+            <li>HEAD points to the current branch you are working on</li>
+            <li>Feature branches keep the main branch clean and stable</li>
+            <li>Fast-forward merge = linear history; Three-way merge = merge commit created</li>
+            <li>Merge conflicts are normal — manually edit the file, then git add + git commit</li>
+            <li>GitHub Flow is the most common workflow for modern teams: feature branches → PR → merge to main</li>
+          </ul>
+        </div>
+        <div class="practice-exercise">
+          <h3>💪 Practical Exercise — Module 5</h3>
+          <ol>
+            <li>Create a branch <code>feature/about-page</code> in your project</li>
+            <li>Add an <code>about.html</code> file and commit it on the feature branch</li>
+            <li>Switch back to <code>main</code> and make a different change (edit README)</li>
+            <li>Merge <code>feature/about-page</code> into <code>main</code></li>
+            <li>Intentionally create a merge conflict by editing the same line on both branches</li>
+            <li>Practice resolving the conflict manually</li>
+          </ol>
+        </div>
+        <div class="interview-questions">
+          <h3>🎤 Interview Questions — Module 5</h3>
+          <div class="qa-list">
+            <div class="qa-item">
+              <div class="question">Q1: What is a merge conflict and how do you resolve it?</div>
+              <div class="answer">A merge conflict occurs when two branches modify the same lines of a file differently and Git cannot auto-resolve which version to keep. To resolve: 1) Open the conflicted file(s), 2) Look for conflict markers (&lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, &gt;&gt;&gt;&gt;&gt;&gt;&gt;), 3) Edit the file to keep the correct content, 4) Remove all conflict markers, 5) git add the resolved files, 6) git commit to complete the merge.</div>
+            </div>
+            <div class="qa-item">
+              <div class="question">Q2: What is the difference between git merge and git rebase?</div>
+              <div class="answer">git merge combines two branches by creating a merge commit with two parent commits, preserving the complete history of both branches. git rebase moves or replays commits from one branch onto another, creating a linear commit history without merge commits. Merge preserves history; rebase rewrites it. Rebase is cleaner but should never be used on shared/public branches.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MODULE 6 ===================== -->
+    <section class="module-section" id="module6">
+      <div class="module-header">
+        <div class="module-number">06</div>
+        <div class="module-info">
+          <h2>GitHub Repository Features</h2>
+          <p>Master GitHub-specific features that make repositories professional and maintainable.</p>
+        </div>
+      </div>
+
+      <div class="topics-grid">
+        <div class="topic-mini-card">
+          <h3>📄 README.md</h3>
+          <p>The README is the front page of your project on GitHub. It is automatically rendered and displayed on the repository's main page. A great README includes: project description, demo/screenshots, installation instructions, usage examples, contributing guidelines, and license information. The README is often the deciding factor in whether a visitor uses, stars, or contributes to your project.</p>
+          <div class="highlight-box purpose-box"><strong>Pro Tip:</strong> Add badges (build status, coverage, version) at the top of your README to show professionalism and project health at a glance.</div>
+        </div>
+        <div class="topic-mini-card">
+          <h3>⚖️ LICENSE</h3>
+          <p>The LICENSE file defines the legal terms under which others may use, copy, modify, and distribute your project. Without a license, your code is technically "all rights reserved" by default — meaning others cannot legally use it. The MIT License is the most permissive and popular choice for open-source projects: it allows anyone to use your code for anything, including commercial purposes, with only the requirement of attribution. The Apache 2.0 license adds patent protection. The GPL requires derivative works to also be open-source.</p>
+        </div>
+        <div class="topic-mini-card">
+          <h3>🚫 .gitignore</h3>
+          <p>The <code>.gitignore</code> file tells Git which files and directories to completely ignore and never track. This is essential for excluding: <code>node_modules/</code> (thousands of dependency files), <code>.env</code> (environment variables with secrets), build output directories (<code>dist/</code>, <code>build/</code>), IDE folders (<code>.vscode/</code>, <code>.idea/</code>), and OS files (<code>.DS_Store</code>, <code>Thumbs.db</code>). GitHub provides <a href="#">template .gitignore files</a> for every major language and framework.</p>
+          <div class="code-block">
+            <div class="code-header"><span>Example .gitignore</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code># Dependencies
+node_modules/
+vendor/
+
+# Environment variables (NEVER commit!)
+.env
+.env.local
+
+# Build output
+dist/
+build/
+*.min.js
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db</code></pre>
+          </div>
+        </div>
+        <div class="topic-mini-card">
+          <h3>🏷️ Tags and Releases</h3>
+          <p>Tags mark specific commits as significant milestones, typically version releases. Unlike branches, tags don't move — they permanently point to one commit. By convention, tags use semantic versioning: <code>v1.0.0</code>, <code>v1.2.3</code>. <strong>Releases</strong> on GitHub are built on top of tags and allow you to attach release notes, changelogs, and downloadable binary files (compiled executables, zip archives) to specific version tags. This is how software is officially "shipped" on GitHub.</p>
+          <div class="code-block">
+            <div class="code-header"><span>Tagging Commands</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code># Create a lightweight tag
+git tag v1.0.0
+
+# Create annotated tag (recommended — includes metadata)
+git tag -a v1.0.0 -m "Release version 1.0.0"
+
+# Push tags to remote
+git push origin --tags
+
+# List all tags
+git tag
+
+# Delete a tag
+git tag -d v0.9.0</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="module-end-section">
+        <div class="key-takeaways">
+          <h3>🔑 Key Takeaways — Module 6</h3>
+          <ul>
+            <li>README.md is your project's front page — invest time in writing a great one</li>
+            <li>Always include a LICENSE file — without one, your code is legally unusable by others</li>
+            <li>.gitignore prevents unwanted files from being committed — especially secrets and build artifacts</li>
+            <li>Tags mark permanent version milestones; Releases package versions with changelogs and downloads</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MODULE 7 ===================== -->
+    <section class="module-section" id="module7">
+      <div class="module-header">
+        <div class="module-number">07</div>
+        <div class="module-info">
+          <h2>Markdown for GitHub</h2>
+          <p>Master GitHub Flavored Markdown to write beautiful documentation, READMEs, and issues.</p>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>7.1 What is Markdown?</h3>
+        <div class="content-block">
+          <p>Markdown is a <strong>lightweight markup language</strong> created by John Gruber in 2004. It uses simple, plain-text syntax that is converted to HTML for display. GitHub uses its own extended version called <strong>GitHub Flavored Markdown (GFM)</strong>, which adds features like task lists, tables, syntax-highlighted code blocks, and emoji support. Markdown is used everywhere on GitHub: READMEs, issues, pull request descriptions, comments, wikis, and profile READMEs.</p>
+        </div>
+      </div>
+
+      <div class="markdown-reference">
+        <div class="md-row">
+          <div class="md-syntax">
+            <h4>Headings</h4>
+            <div class="code-block"><pre><code># Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4</code></pre></div>
+          </div>
+          <div class="md-rendered">
+            <h4>Result</h4>
+            <div class="rendered-box">
+              <div class="rh1">Heading 1</div>
+              <div class="rh2">Heading 2</div>
+              <div class="rh3">Heading 3</div>
+              <div class="rh4">Heading 4</div>
+            </div>
+          </div>
+        </div>
+        <div class="md-row">
+          <div class="md-syntax">
+            <h4>Text Formatting</h4>
+            <div class="code-block"><pre><code>**Bold text**
+*Italic text*
+~~Strikethrough~~
+`inline code`
+> Blockquote</code></pre></div>
+          </div>
+          <div class="md-rendered">
+            <h4>Result</h4>
+            <div class="rendered-box">
+              <p><strong>Bold text</strong></p>
+              <p><em>Italic text</em></p>
+              <p><s>Strikethrough</s></p>
+              <p><code>inline code</code></p>
+              <blockquote>Blockquote</blockquote>
+            </div>
+          </div>
+        </div>
+        <div class="md-row">
+          <div class="md-syntax">
+            <h4>Lists</h4>
+            <div class="code-block"><pre><code>- Item one
+- Item two
+  - Nested item
+
+1. First step
+2. Second step
+
+- [x] Completed task
+- [ ] Pending task</code></pre></div>
+          </div>
+          <div class="md-rendered">
+            <h4>Result</h4>
+            <div class="rendered-box">
+              <ul><li>Item one</li><li>Item two<ul><li>Nested item</li></ul></li></ul>
+              <ol><li>First step</li><li>Second step</li></ol>
+              <ul class="task-list"><li>✅ Completed task</li><li>⬜ Pending task</li></ul>
+            </div>
+          </div>
+        </div>
+        <div class="md-row">
+          <div class="md-syntax">
+            <h4>Code Blocks</h4>
+            <div class="code-block"><pre><code>```python
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("World"))
+```</code></pre></div>
+          </div>
+          <div class="md-rendered">
+            <h4>Result</h4>
+            <div class="rendered-box code-rendered">
+              <pre><code>def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("World"))</code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="md-row">
+          <div class="md-syntax">
+            <h4>Tables</h4>
+            <div class="code-block"><pre><code>| Name  | Role    | Level  |
+|-------|---------|--------|
+| Alice | Dev     | Senior |
+| Bob   | Designer| Mid    |</code></pre></div>
+          </div>
+          <div class="md-rendered">
+            <h4>Result</h4>
+            <div class="rendered-box">
+              <table class="rendered-table">
+                <thead><tr><th>Name</th><th>Role</th><th>Level</th></tr></thead>
+                <tbody>
+                  <tr><td>Alice</td><td>Dev</td><td>Senior</td></tr>
+                  <tr><td>Bob</td><td>Designer</td><td>Mid</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="module-end-section">
+        <div class="key-takeaways">
+          <h3>🔑 Key Takeaways — Module 7</h3>
+          <ul>
+            <li>Markdown converts simple text syntax to formatted HTML</li>
+            <li>GitHub uses GitHub Flavored Markdown (GFM) with extras like task lists and tables</li>
+            <li>Use fenced code blocks (```) with language name for syntax highlighting</li>
+            <li>Good documentation in Markdown is a mark of a professional developer</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MODULE 8 ===================== -->
+    <section class="module-section" id="module8">
+      <div class="module-header">
+        <div class="module-number">08</div>
+        <div class="module-info">
+          <h2>GitHub Profile Building</h2>
+          <p>Transform your GitHub profile into a powerful professional portfolio.</p>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>8.1 Creating a Professional Profile</h3>
+        <div class="content-block">
+          <p>Your GitHub profile is your <strong>developer resume</strong>. Many recruiters and hiring managers look at GitHub profiles as seriously as — or more than — traditional resumes. A strong GitHub profile demonstrates that you code regularly, contribute meaningfully, and understand collaborative development practices.</p>
+          <p>Key elements of a professional GitHub profile: a clear, professional photo, a concise bio (what you do, what you're learning, your interests), your location and website/portfolio link, a pinned set of your best 6 repositories, consistent contribution activity (green squares on the contribution graph), and a profile README.</p>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>8.2 Profile README</h3>
+        <div class="content-block">
+          <p>GitHub allows you to create a special repository with the same name as your username (e.g., if your username is <code>johnsmith</code>, create a repository called <code>johnsmith</code>). The README.md in this repository is displayed on your profile page as a custom introduction. This is one of the best ways to stand out and showcase your personality, skills, and projects. Great profile READMEs include: a headline about who you are, skills with technology badges, current projects, GitHub stats cards, and social media links.</p>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>Profile README Template</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># 👋 Hi, I'm John Smith
+
+🎓 Computer Science Student | 💻 Aspiring Full-Stack Developer | 🌍 Open Source Enthusiast
+
+## 🚀 About Me
+- 🔭 Currently working on: **Student Management System**
+- 🌱 Currently learning: **React, Node.js, Docker**
+- 👯 Looking to collaborate on: **Open Source Projects**
+- 💬 Ask me about: **Python, JavaScript, Git**
+- 📫 Reach me: john@example.com
+
+## 🛠️ Tech Stack
+![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white)
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black)
+
+## 📊 GitHub Stats
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=johnsmith&show_icons=true&theme=radical)
+
+## 🌐 Connect With Me
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?logo=linkedin)](https://linkedin.com/in/johnsmith)
+[![Portfolio](https://img.shields.io/badge/-Portfolio-FF5722)](https://johnsmith.dev)</code></pre>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>8.3 Building a Portfolio Strategy</h3>
+        <div class="best-practices-grid">
+          <div class="bp-card">
+            <div class="bp-icon">📌</div>
+            <h4>Pin Your Best 6</h4>
+            <p>Pin only your strongest, most complete projects. Each pinned repo should have a README, working code, and demonstrate specific skills.</p>
+          </div>
+          <div class="bp-card">
+            <div class="bp-icon">🟩</div>
+            <h4>Keep Contributions Consistent</h4>
+            <p>Try to commit something every day, even if it's documentation or a small improvement. Consistency shows discipline.</p>
+          </div>
+          <div class="bp-card">
+            <div class="bp-icon">⭐</div>
+            <h4>Contribute to Open Source</h4>
+            <p>Even one accepted PR to a well-known project significantly strengthens your profile and demonstrates real-world collaboration skills.</p>
+          </div>
+          <div class="bp-card">
+            <div class="bp-icon">📖</div>
+            <h4>Document Everything</h4>
+            <p>Every project needs a detailed README with screenshots, installation steps, and usage examples. Well-documented projects show professionalism.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="module-end-section">
+        <div class="key-takeaways">
+          <h3>🔑 Key Takeaways — Module 8</h3>
+          <ul>
+            <li>GitHub profile = developer resume — treat it professionally</li>
+            <li>Create a profile README using a repo with your username as the name</li>
+            <li>Pin your best 6 repositories and keep them well-documented</li>
+            <li>Consistent contribution activity (green graph) impresses recruiters</li>
+            <li>Add social links, badges, and GitHub stats to your profile README</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MODULE 9 ===================== -->
+    <section class="module-section" id="module9">
+      <div class="module-header">
+        <div class="module-number">09</div>
+        <div class="module-info">
+          <h2>Open Source Contributions</h2>
+          <p>Learn how to find, fork, contribute to, and get involved in open-source projects.</p>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>9.1 Understanding Open Source</h3>
+        <div class="content-block">
+          <p>Open source software is software whose <strong>source code is publicly available</strong> for anyone to view, use, modify, and distribute. The open-source movement is one of the most significant forces in software development — projects like Linux, Git, Apache, Python, React, TensorFlow, and Kubernetes are all open source and power billions of devices and services worldwide.</p>
+          <p>Contributing to open source is one of the best ways to accelerate your career as a developer. It provides real-world experience working with large codebases, collaborating with experienced engineers, following professional code review processes, and understanding enterprise-grade development practices. Open-source contributions are universally respected by employers and serve as concrete proof of your skills.</p>
+          <p>The key principles of open source collaboration are: be respectful and patient, follow the project's contribution guidelines, read existing issues and PRs before creating new ones, start small (fix typos, improve docs, fix small bugs) before attempting large features, and understand that maintainers are often volunteers with limited time.</p>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>9.2 The Fork and Pull Request Workflow</h3>
+        <div class="content-block">
+          <p>The <strong>Fork → Clone → Branch → Commit → Push → Pull Request</strong> workflow is the standard process for contributing to any project you do not have direct write access to (which is most open-source projects). Understanding this workflow deeply is essential for open-source contribution and collaborative development.</p>
+        </div>
+        <div class="workflow-steps">
+          <div class="wf-step"><span class="wf-num">1</span><div class="wf-content"><h4>Fork the Repository</h4><p>Click "Fork" on GitHub to create a copy of the project under your account.</p></div></div>
+          <div class="wf-step"><span class="wf-num">2</span><div class="wf-content"><h4>Clone Your Fork</h4><p><code>git clone git@github.com:yourusername/project.git</code></p></div></div>
+          <div class="wf-step"><span class="wf-num">3</span><div class="wf-content"><h4>Add Upstream Remote</h4><p><code>git remote add upstream git@github.com:originalowner/project.git</code></p></div></div>
+          <div class="wf-step"><span class="wf-num">4</span><div class="wf-content"><h4>Create Feature Branch</h4><p><code>git switch -c fix/typo-in-readme</code></p></div></div>
+          <div class="wf-step"><span class="wf-num">5</span><div class="wf-content"><h4>Make Changes and Commit</h4><p>Make your changes, stage, and commit with a clear message.</p></div></div>
+          <div class="wf-step"><span class="wf-num">6</span><div class="wf-content"><h4>Sync with Upstream</h4><p><code>git fetch upstream && git rebase upstream/main</code></p></div></div>
+          <div class="wf-step"><span class="wf-num">7</span><div class="wf-content"><h4>Push to Your Fork</h4><p><code>git push origin fix/typo-in-readme</code></p></div></div>
+          <div class="wf-step"><span class="wf-num">8</span><div class="wf-content"><h4>Open Pull Request</h4><p>Go to GitHub, click "Compare & Pull Request", write a descriptive PR description, and submit.</p></div></div>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>9.3 Finding Beginner-Friendly Projects</h3>
+        <div class="content-block">
+          <p>Finding the right open-source project to start contributing to is key. Don't try to contribute to massive, complex projects like Linux or Chrome as your first contribution — the barrier to entry is too high. Instead, look for projects that are actively maintained, have good documentation, and specifically welcome newcomers.</p>
+        </div>
+        <div class="resource-list">
+          <div class="resource-item"><span class="resource-icon">🏷️</span><div><strong>good-first-issue label:</strong> Search GitHub for <code>label:"good first issue"</code> in any language. These issues are explicitly tagged as suitable for newcomers.</div></div>
+          <div class="resource-item"><span class="resource-icon">🌐</span><div><strong>goodfirstissue.dev:</strong> A curated website that aggregates good first issues across popular open-source projects.</div></div>
+          <div class="resource-item"><span class="resource-icon">🗺️</span><div><strong>up-for-grabs.net:</strong> Projects and tasks suitable for new contributors, filterable by language.</div></div>
+          <div class="resource-item"><span class="resource-icon">🎃</span><div><strong>Hacktoberfest:</strong> Digital Ocean's annual October event that encourages open-source contributions with T-shirt rewards — perfect for first-timers.</div></div>
+          <div class="resource-item"><span class="resource-icon">🎓</span><div><strong>Google Summer of Code:</strong> Paid open-source internship program for students — highly prestigious and career-defining.</div></div>
+        </div>
+      </div>
+
+      <div class="module-end-section">
+        <div class="key-takeaways">
+          <h3>🔑 Key Takeaways — Module 9</h3>
+          <ul>
+            <li>Open source contributions demonstrate real-world collaboration skills that employers value highly</li>
+            <li>Fork → Clone → Branch → Commit → Push → PR is the standard contribution workflow</li>
+            <li>Always add an "upstream" remote to keep your fork in sync with the original project</li>
+            <li>Start with small contributions: fix typos, improve docs, add tests, fix labeled issues</li>
+            <li>Read CONTRIBUTING.md before making any contribution to understand project guidelines</li>
+            <li>Hacktoberfest, GSoC, and good-first-issue labels are excellent starting points</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MODULE 10 ===================== -->
+    <section class="module-section" id="module10">
+      <div class="module-header">
+        <div class="module-number">10</div>
+        <div class="module-info">
+          <h2>Intermediate Git Concepts</h2>
+          <p>Level up with advanced Git commands used daily in professional development.</p>
+        </div>
+      </div>
+
+      <div class="topic-card command-card">
+        <div class="command-badge">git rebase</div>
+        <h3>10.1 Git Rebase</h3>
+        <div class="content-block">
+          <p>Git rebase is the process of <strong>moving or re-applying commits from one branch to another</strong>, creating a cleaner, more linear history. Unlike merge (which creates a merge commit preserving the fork history), rebase replays your commits on top of another branch as if you had started your work from the latest commit of that branch. This results in a perfectly linear commit history that is much easier to read and understand.</p>
+          <p>The <strong>interactive rebase</strong> (<code>git rebase -i</code>) is one of the most powerful Git tools available. It lets you rewrite your commit history before pushing: squash multiple commits into one, reorder commits, edit commit messages, split a commit, or drop unwanted commits. This is extremely useful for cleaning up messy working branches before submitting a Pull Request.</p>
+          <p><strong>Golden Rule of Rebasing:</strong> Never rebase commits that have been pushed to a shared public branch. Rebase rewrites commit history (creates new commit hashes), which causes severe problems for teammates who have the old commits. Only rebase on your local feature branches before pushing, or on personal branches that nobody else uses.</p>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>Rebase Commands</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Basic rebase: replay feature branch on top of main
+git switch feature/my-feature
+git rebase main
+
+# Interactive rebase (last 4 commits)
+git rebase -i HEAD~4
+
+# Interactive options:
+# pick    = keep commit as is
+# reword  = keep commit but edit message
+# edit    = pause to amend commit
+# squash  = merge into previous commit
+# fixup   = like squash but discard message
+# drop    = remove commit entirely
+
+# Abort a rebase in progress
+git rebase --abort
+
+# Continue after resolving conflicts during rebase
+git rebase --continue</code></pre>
+        </div>
+      </div>
+
+      <div class="topic-card command-card">
+        <div class="command-badge">git stash</div>
+        <h3>10.2 Git Stash</h3>
+        <div class="content-block">
+          <p>Git stash is a <strong>temporary shelf for incomplete work</strong>. It saves your current working directory changes (including staged and unstaged modifications) and reverts to a clean working state, without making a commit. This is incredibly useful when you need to suddenly switch context — for example, you are midway through a feature and an urgent bug report comes in requiring you to immediately switch to the main branch. Instead of committing half-done work, you stash it, fix the bug, and then restore (pop) your stash to resume.</p>
+          <p>Stashes are stored in a stack — you can have multiple stashes. The most recent stash is always referenced as <code>stash@{0}</code>. Stashes are stored locally and do not transfer to GitHub when you push.</p>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>Stash Commands</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Stash current changes
+git stash
+
+# Stash with a descriptive message
+git stash push -m "WIP: adding user profile form"
+
+# List all stashes
+git stash list
+# stash@{0}: WIP: adding user profile form
+# stash@{1}: On main: temp changes
+
+# Apply most recent stash (keeps it in stash list)
+git stash apply
+
+# Apply and remove from stash list
+git stash pop
+
+# Apply a specific stash
+git stash apply stash@{1}
+
+# Delete a specific stash
+git stash drop stash@{0}
+
+# Clear all stashes
+git stash clear
+
+# View stash contents
+git stash show -p stash@{0}</code></pre>
+        </div>
+      </div>
+
+      <div class="topic-card command-card">
+        <div class="command-badge">git cherry-pick</div>
+        <h3>10.3 Git Cherry-Pick</h3>
+        <div class="content-block">
+          <p>Git cherry-pick <strong>applies the changes from a specific commit (or set of commits) to your current branch</strong>, without merging the entire source branch. It's like picking individual cherries from a tree rather than taking the whole branch. This is useful when you want to backport a specific bug fix from a development branch to a stable production branch, or when you want to bring over just one commit from a feature branch without merging everything else.</p>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>Cherry-Pick Commands</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Cherry-pick a single commit (use its hash)
+git cherry-pick a3f72b8
+
+# Cherry-pick multiple commits
+git cherry-pick a3f72b8 b8c39d1 c2e45f7
+
+# Cherry-pick a range of commits
+git cherry-pick a3f72b8..c2e45f7
+
+# Cherry-pick without committing (stage only)
+git cherry-pick --no-commit a3f72b8
+
+# Abort cherry-pick on conflict
+git cherry-pick --abort</code></pre>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>10.4 Semantic Versioning</h3>
+        <div class="content-block">
+          <p>Semantic Versioning (SemVer) is a <strong>standardized version numbering convention</strong> used by virtually all software projects. The format is <code>MAJOR.MINOR.PATCH</code> — for example, <code>2.5.3</code>. Each number has a specific meaning:</p>
+          <ul>
+            <li><strong>MAJOR</strong> — Incremented for incompatible, breaking API changes. Going from 1.x.x to 2.0.0 means something that worked before will break.</li>
+            <li><strong>MINOR</strong> — Incremented for new features that are backward-compatible. Old code still works, new functionality is added.</li>
+            <li><strong>PATCH</strong> — Incremented for backward-compatible bug fixes only. No new features, no breaking changes.</li>
+          </ul>
+          <p>Pre-release versions use suffixes: <code>1.0.0-alpha</code>, <code>1.0.0-beta.1</code>, <code>1.0.0-rc.2</code> (release candidate). Build metadata can be appended: <code>1.0.0+20240101</code>. Understanding SemVer is essential for managing dependencies (package.json, requirements.txt) and for releasing your own software.</p>
+        </div>
+        <div class="semver-visual">
+          <div class="sv-box major"><div class="sv-num">2</div><div class="sv-label">MAJOR</div><div class="sv-desc">Breaking changes</div></div>
+          <div class="sv-dot">.</div>
+          <div class="sv-box minor"><div class="sv-num">5</div><div class="sv-label">MINOR</div><div class="sv-desc">New features</div></div>
+          <div class="sv-dot">.</div>
+          <div class="sv-box patch"><div class="sv-num">3</div><div class="sv-label">PATCH</div><div class="sv-desc">Bug fixes</div></div>
+        </div>
+      </div>
+
+      <div class="topic-card command-card">
+        <div class="command-badge">git hooks</div>
+        <h3>10.5 Git Hooks</h3>
+        <div class="content-block">
+          <p>Git hooks are <strong>scripts that Git automatically executes before or after specific events</strong> like commits, pushes, merges, or checkouts. They live in the <code>.git/hooks/</code> directory and can be written in any scripting language (bash, Python, Node.js). Hooks are incredibly powerful for enforcing code quality standards, running automated tests before commits, linting code, enforcing commit message formats, and preventing accidental pushes to protected branches.</p>
+          <p>Common hooks: <code>pre-commit</code> (runs before commit — use to run linters/tests), <code>commit-msg</code> (validates commit message format), <code>pre-push</code> (runs before push — can run full test suite), <code>post-merge</code> (runs after merge — useful for running <code>npm install</code> if package.json changed). The popular tool <strong>Husky</strong> makes managing git hooks in JavaScript projects easy.</p>
+        </div>
+      </div>
+
+      <div class="module-end-section">
+        <div class="key-takeaways">
+          <h3>🔑 Key Takeaways — Module 10</h3>
+          <ul>
+            <li>git rebase creates linear history by replaying commits — never rebase shared branches</li>
+            <li>Interactive rebase (<code>-i</code>) is the most powerful tool for cleaning up commit history</li>
+            <li>git stash temporarily saves work without committing — perfect for context switching</li>
+            <li>git cherry-pick applies specific commits to a different branch</li>
+            <li>Semantic versioning (MAJOR.MINOR.PATCH) is the industry standard for version numbers</li>
+            <li>Git hooks automate quality checks at specific points in the Git workflow</li>
+          </ul>
+        </div>
+        <div class="interview-questions">
+          <h3>🎤 Interview Questions — Module 10</h3>
+          <div class="qa-list">
+            <div class="qa-item">
+              <div class="question">Q1: When would you use git stash vs git commit?</div>
+              <div class="answer">Use git stash when you have incomplete, work-in-progress changes that you need to temporarily set aside to switch to another task. Stash is for temporary, informal saves. Use git commit when your changes represent a logical, complete unit of work that you want to permanently record in the project history with a meaningful message.</div>
+            </div>
+            <div class="qa-item">
+              <div class="question">Q2: What is the golden rule of git rebase?</div>
+              <div class="answer">Never rebase commits that have already been pushed to a public/shared branch that others have pulled. Rebase creates new commit hashes (rewrites history), which causes anyone who pulled the original commits to have a diverged history that is extremely difficult to reconcile. Only rebase on local branches or personal branches that no one else is using.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MODULE 11 ===================== -->
+    <section class="module-section" id="module11">
+      <div class="module-header">
+        <div class="module-number">11</div>
+        <div class="module-info">
+          <h2>GitHub Advanced Features</h2>
+          <p>Explore powerful GitHub platform features for automation, deployment, and collaboration.</p>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>11.1 GitHub Actions — CI/CD Automation</h3>
+        <div class="content-block">
+          <p>GitHub Actions is GitHub's built-in <strong>automation and CI/CD (Continuous Integration/Continuous Deployment) platform</strong>. It allows you to automate virtually any workflow — running tests when code is pushed, building Docker images, deploying to cloud services, sending notifications, generating documentation, and much more. Actions are defined in YAML files stored in <code>.github/workflows/</code> in your repository.</p>
+          <p>Key concepts: A <strong>Workflow</strong> is an automated process (a YAML file). It contains one or more <strong>Jobs</strong>. Each job runs on a <strong>Runner</strong> (a virtual machine — Ubuntu, Windows, or macOS). Jobs contain <strong>Steps</strong> — individual commands or pre-built <strong>Actions</strong> from the GitHub Marketplace. Workflows are triggered by <strong>Events</strong>: push, pull_request, schedule (cron), manual trigger (workflow_dispatch), etc.</p>
+          <p>CI/CD is a DevOps practice where code changes are automatically built, tested, and deployed. <strong>Continuous Integration (CI)</strong> means every commit triggers automated builds and tests, catching bugs immediately. <strong>Continuous Deployment (CD)</strong> means passing code is automatically deployed to staging or production environments.</p>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>.github/workflows/ci.yml — Example Workflow</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>name: CI Pipeline
+
+# Trigger: run on every push to main and on all pull requests
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Get the code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run linter
+      - name: Run ESLint
+        run: npm run lint
+
+      # Step 5: Run tests
+      - name: Run tests
+        run: npm test
+
+      # Step 6: Build the app
+      - name: Build
+        run: npm run build</code></pre>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>11.2 GitHub Pages</h3>
+        <div class="content-block">
+          <p>GitHub Pages is a <strong>free static website hosting service</strong> built directly into GitHub repositories. You can host a personal website, project documentation, a portfolio, or any static HTML/CSS/JavaScript site directly from a GitHub repository — no server setup, no hosting costs, no configuration. The site is automatically published at <code>https://username.github.io/repository-name</code> (or at a custom domain you configure).</p>
+          <p>GitHub Pages supports <strong>Jekyll</strong> (a static site generator) natively, which means you can write content in Markdown and Jekyll converts it to a full website automatically. Many developers host their portfolios, blogs, and project documentation on GitHub Pages. It is free, reliable, and automatically deployed whenever you push to the designated branch (usually <code>main</code> or <code>gh-pages</code>).</p>
+        </div>
+        <div class="steps-list">
+          <div class="step"><span class="step-num">1</span><div>Create a repository named <code>username.github.io</code> for a personal site (or any repo for a project site)</div></div>
+          <div class="step"><span class="step-num">2</span><div>Add your HTML/CSS/JS files or Markdown content</div></div>
+          <div class="step"><span class="step-num">3</span><div>Go to Settings → Pages → Select branch → Save</div></div>
+          <div class="step"><span class="step-num">4</span><div>Your site is live at the provided URL within minutes</div></div>
+          <div class="step"><span class="step-num">5</span><div>Optionally configure a custom domain in the Custom Domain field</div></div>
+        </div>
+      </div>
+
+      <div class="topics-grid">
+        <div class="topic-mini-card">
+          <h3>📋 GitHub Projects</h3>
+          <p>GitHub Projects is a <strong>built-in project management tool</strong> (similar to Trello or Jira) that lives inside your repository. You can create Kanban boards, roadmaps, and tables to organize issues and pull requests into columns like "Backlog", "In Progress", "In Review", and "Done". Projects can link across multiple repositories and are essential for managing larger codebases or team workflows.</p>
+        </div>
+        <div class="topic-mini-card">
+          <h3>💬 GitHub Discussions</h3>
+          <p>GitHub Discussions is a <strong>community forum feature</strong> built into repositories. Unlike Issues (which are for actionable bug reports and feature requests), Discussions are for open-ended conversations, questions and answers, announcements, and general community interaction. Many popular open-source projects use Discussions for community support, RFC proposals, and show-and-tell posts.</p>
+        </div>
+        <div class="topic-mini-card">
+          <h3>🔒 Security Features</h3>
+          <p><strong>Dependabot</strong> automatically scans your dependencies for known security vulnerabilities and opens automated PRs to update vulnerable packages. <strong>Code Scanning</strong> (using CodeQL) finds security vulnerabilities in your own code. <strong>Secret Scanning</strong> detects accidentally committed API keys, tokens, and passwords and alerts you immediately. These features are available for free on public repositories.</p>
+        </div>
+        <div class="topic-mini-card">
+          <h3>📖 GitHub Wiki</h3>
+          <p>Every GitHub repository can have a <strong>Wiki</strong> — a separate, editable collection of Markdown pages for extended documentation. Wikis are ideal for developer guides, API documentation, architecture decisions, onboarding documents, and anything too long or complex for the README. Wikis have their own navigation structure and can be edited directly on GitHub or cloned as a separate Git repository.</p>
+        </div>
+      </div>
+
+      <div class="module-end-section">
+        <div class="key-takeaways">
+          <h3>🔑 Key Takeaways — Module 11</h3>
+          <ul>
+            <li>GitHub Actions automates CI/CD workflows with YAML files in .github/workflows/</li>
+            <li>CI = automatic build and test on every commit; CD = automatic deployment on passing tests</li>
+            <li>GitHub Pages provides free static website hosting from any repository</li>
+            <li>GitHub Projects is a built-in Kanban/project management tool for issues and PRs</li>
+            <li>Dependabot, Code Scanning, and Secret Scanning protect your repository from security threats</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MODULE 12 ===================== -->
+    <section class="module-section" id="module12">
+      <div class="module-header">
+        <div class="module-number">12</div>
+        <div class="module-info">
+          <h2>Real-World Workflows</h2>
+          <p>See how Git and GitHub are used in actual development environments — from solo to enterprise.</p>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>12.1 Individual Project Workflow</h3>
+        <div class="content-block">
+          <p>For solo projects, the workflow is simpler but still benefits enormously from good Git practices. Even working alone, Git provides you with a complete history, the ability to experiment safely on branches, automatic backups via GitHub, and a professional portfolio. Use it as if someone will eventually join your project — this also helps you maintain good habits.</p>
+        </div>
+        <div class="workflow-steps">
+          <div class="wf-step"><span class="wf-num">1</span><div class="wf-content"><h4>Initialize & Setup</h4><p>Create repo → git init or clone → Set up .gitignore → Write initial README → First commit</p></div></div>
+          <div class="wf-step"><span class="wf-num">2</span><div class="wf-content"><h4>Feature Development</h4><p>Create feature branch → Develop → Commit frequently → Push to remote (backup)</p></div></div>
+          <div class="wf-step"><span class="wf-num">3</span><div class="wf-content"><h4>Integration</h4><p>Merge feature to main → Tag releases with semantic versioning → Deploy if applicable</p></div></div>
+          <div class="wf-step"><span class="wf-num">4</span><div class="wf-content"><h4>Maintenance</h4><p>Create branches for bug fixes → Hotfix commits → Keep README and docs updated</p></div></div>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>12.2 Team Project Workflow (GitHub Flow)</h3>
+        <div class="content-block">
+          <p>In a team environment using GitHub Flow, the workflow revolves around pull requests, code reviews, and protected branches. The <code>main</code> branch is always deployable — it is protected with branch protection rules that require PR reviews and passing CI checks before any code can merge.</p>
+        </div>
+        <div class="workflow-steps">
+          <div class="wf-step"><span class="wf-num">1</span><div class="wf-content"><h4>Start of Day</h4><p><code>git pull origin main</code> — sync with latest changes before starting work</p></div></div>
+          <div class="wf-step"><span class="wf-num">2</span><div class="wf-content"><h4>Create Feature Branch</h4><p><code>git switch -c feature/user-notifications</code> — descriptive name, one feature per branch</p></div></div>
+          <div class="wf-step"><span class="wf-num">3</span><div class="wf-content"><h4>Develop and Commit</h4><p>Commit early and often with meaningful messages. Push regularly as remote backup.</p></div></div>
+          <div class="wf-step"><span class="wf-num">4</span><div class="wf-content"><h4>Open Pull Request</h4><p>Push branch → Open PR → Write description → Assign reviewers → Link related issues</p></div></div>
+          <div class="wf-step"><span class="wf-num">5</span><div class="wf-content"><h4>Code Review</h4><p>Reviewers comment → Discuss → Make requested changes → Push updates → Re-review</p></div></div>
+          <div class="wf-step"><span class="wf-num">6</span><div class="wf-content"><h4>CI/CD Checks</h4><p>GitHub Actions runs tests → Must pass before merge is allowed</p></div></div>
+          <div class="wf-step"><span class="wf-num">7</span><div class="wf-content"><h4>Merge and Deploy</h4><p>PR approved → Squash or merge → Delete branch → Auto-deploy triggers</p></div></div>
+        </div>
+      </div>
+
+      <div class="module-end-section">
+        <div class="key-takeaways">
+          <h3>🔑 Key Takeaways — Module 12</h3>
+          <ul>
+            <li>Always pull before starting work to avoid conflicts</li>
+            <li>In team projects, all changes go through Pull Requests for review</li>
+            <li>main branch should always be stable and deployable</li>
+            <li>Branch protection rules enforce PR reviews and CI checks before merging</li>
+            <li>Open source follows the Fork → PR workflow since contributors don't have write access</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MODULE 13 ===================== -->
+    <section class="module-section" id="module13">
+      <div class="module-header">
+        <div class="module-number">13</div>
+        <div class="module-info">
+          <h2>GitHub for Career Growth</h2>
+          <p>Leverage GitHub as a career-building tool for internships and professional roles.</p>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>13.1 How Recruiters Evaluate GitHub Profiles</h3>
+        <div class="content-block">
+          <p>Recruiters and hiring managers increasingly use GitHub as a primary evaluation tool for technical candidates. Understanding what they look for allows you to intentionally build a profile that makes a strong impression. Here is what experienced technical recruiters examine:</p>
+          <p><strong>Contribution Activity:</strong> The green contribution graph on your profile page is immediately visible. A consistent pattern of daily or near-daily contributions signals discipline and genuine passion for coding. Gaps are noticeable, though not always disqualifying. Sudden "green washes" (bulk-committing hundreds of empty files) are easily spotted and viewed very negatively.</p>
+          <p><strong>Code Quality in Repositories:</strong> Recruiters (and technical interviewers) may look at your actual code. Clean, well-commented, organized code with consistent style demonstrates technical maturity. Messy, uncommented spaghetti code is a red flag even for junior roles.</p>
+          <p><strong>README Quality:</strong> Well-written READMEs with project descriptions, installation instructions, screenshots, and tech stacks show communication skills and attention to detail — both highly valued in professional environments.</p>
+          <p><strong>Diversity of Projects:</strong> A portfolio that shows range — web apps, CLI tools, algorithms, API integrations, open-source contributions — demonstrates a broad and growing skill set. All similar "tutorial" projects suggest you haven't explored independently.</p>
+          <p><strong>Collaboration Evidence:</strong> Having contributions to other repositories (PRs merged into external projects) is a significant positive signal. It proves you can work in unfamiliar codebases, communicate with maintainers, and follow external code standards.</p>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>13.2 Common Student Mistakes</h3>
+        <div class="mistake-grid">
+          <div class="mistake-card">
+            <div class="mistake-icon">❌</div>
+            <h4>Only tutorial projects</h4>
+            <p>Having only "Todo App" and "Calculator" clones suggests you haven't built anything original. Add at least 2-3 original project ideas.</p>
+          </div>
+          <div class="mistake-card">
+            <div class="mistake-icon">❌</div>
+            <h4>No README files</h4>
+            <p>Repositories without READMEs look abandoned and unprofessional. Always document every project, no matter how small.</p>
+          </div>
+          <div class="mistake-card">
+            <div class="mistake-icon">❌</div>
+            <h4>Committing secrets</h4>
+            <p>API keys in commit history are a critical security mistake that can be exploited. Always use .env files and .gitignore.</p>
+          </div>
+          <div class="mistake-card">
+            <div class="mistake-icon">❌</div>
+            <h4>Vague commit messages</h4>
+            <p>"fix", "update", "changes" tell nothing about what was done. Write descriptive messages that explain the WHY, not just the WHAT.</p>
+          </div>
+          <div class="mistake-card">
+            <div class="mistake-icon">❌</div>
+            <h4>No consistent activity</h4>
+            <p>Long gaps followed by sudden spurts look suspicious. Try to contribute something small every day — even documentation improvements count.</p>
+          </div>
+          <div class="mistake-card">
+            <div class="mistake-icon">❌</div>
+            <h4>Committing to main directly</h4>
+            <p>Always use branches and PRs, even for personal projects. It demonstrates you understand professional team workflows.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <h3>13.3 Industry Best Practices</h3>
+        <div class="content-block">
+          <p>Beyond technical skills, professional software developers follow a set of practices that distinguish them from beginners. Adopting these practices as a student sets you apart significantly in job applications and interviews.</p>
+          <ul class="best-practice-list">
+            <li>🌿 <strong>Branch everything</strong> — Never commit directly to main in any collaborative project</li>
+            <li>📝 <strong>Write meaningful commit messages</strong> — Follow conventional commits format</li>
+            <li>🔍 <strong>Code review everything</strong> — All changes go through PR review, even in small teams</li>
+            <li>🧪 <strong>Write tests</strong> — Unit tests show you understand quality assurance</li>
+            <li>🤖 <strong>Set up CI/CD</strong> — Even a simple GitHub Actions workflow shows DevOps awareness</li>
+            <li>📊 <strong>Use Issues for tracking</strong> — Don't just code randomly; use GitHub Issues to track tasks and bugs</li>
+            <li>🔒 <strong>Use branch protection rules</strong> — Enforce PR reviews and CI on the main branch</li>
+            <li>📦 <strong>Semantic versioning</strong> — Tag releases properly with v1.0.0 format</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="module-end-section">
+        <div class="key-takeaways">
+          <h3>🔑 Key Takeaways — Module 13</h3>
+          <ul>
+            <li>Recruiters look at contribution activity, code quality, README quality, and project diversity</li>
+            <li>Having open-source contributions is a significant career differentiator</li>
+            <li>Avoid the common student mistakes: vague commits, no READMEs, only tutorial projects, committed secrets</li>
+            <li>Adopt professional practices early: branch workflow, code review, CI/CD, semantic versioning</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CHEAT SHEET ===================== -->
+    <section class="module-section cheatsheet-section" id="cheatsheet">
+      <div class="module-header">
+        <div class="module-number">📋</div>
+        <div class="module-info">
+          <h2>Git Command Cheat Sheet</h2>
+          <p>Quick reference for the most essential Git commands organized by category.</p>
+        </div>
+      </div>
+
+      <div class="cheatsheet-grid">
+        <div class="cs-category">
+          <h3>🏁 Setup & Init</h3>
+          <div class="cs-commands">
+            <div class="cs-cmd"><code>git init</code><span>Initialize new repo</span></div>
+            <div class="cs-cmd"><code>git clone &lt;url&gt;</code><span>Clone remote repo</span></div>
+            <div class="cs-cmd"><code>git config --global user.name "Name"</code><span>Set username</span></div>
+            <div class="cs-cmd"><code>git config --global user.email "email"</code><span>Set email</span></div>
+          </div>
+        </div>
+        <div class="cs-category">
+          <h3>📸 Stage & Commit</h3>
+          <div class="cs-commands">
+            <div class="cs-cmd"><code>git status</code><span>Show working tree status</span></div>
+            <div class="cs-cmd"><code>git add .</code><span>Stage all changes</span></div>
+            <div class="cs-cmd"><code>git add &lt;file&gt;</code><span>Stage specific file</span></div>
+            <div class="cs-cmd"><code>git commit -m "msg"</code><span>Commit with message</span></div>
+            <div class="cs-cmd"><code>git commit --amend</code><span>Edit last commit</span></div>
+          </div>
+        </div>
+        <div class="cs-category">
+          <h3>🌿 Branching</h3>
+          <div class="cs-commands">
+            <div class="cs-cmd"><code>git branch</code><span>List branches</span></div>
+            <div class="cs-cmd"><code>git switch -c &lt;name&gt;</code><span>Create & switch branch</span></div>
+            <div class="cs-cmd"><code>git switch &lt;name&gt;</code><span>Switch branch</span></div>
+            <div class="cs-cmd"><code>git merge &lt;branch&gt;</code><span>Merge into current</span></div>
+            <div class="cs-cmd"><code>git branch -d &lt;name&gt;</code><span>Delete branch</span></div>
+          </div>
+        </div>
+        <div class="cs-category">
+          <h3>☁️ Remote</h3>
+          <div class="cs-commands">
+            <div class="cs-cmd"><code>git remote -v</code><span>List remotes</span></div>
+            <div class="cs-cmd"><code>git push -u origin &lt;branch&gt;</code><span>Push + set upstream</span></div>
+            <div class="cs-cmd"><code>git pull</code><span>Fetch + merge</span></div>
+            <div class="cs-cmd"><code>git fetch</code><span>Fetch without merge</span></div>
+            <div class="cs-cmd"><code>git push origin --delete &lt;b&gt;</code><span>Delete remote branch</span></div>
+          </div>
+        </div>
+        <div class="cs-category">
+          <h3>🕵️ History & Diff</h3>
+          <div class="cs-commands">
+            <div class="cs-cmd"><code>git log --oneline</code><span>Compact commit history</span></div>
+            <div class="cs-cmd"><code>git log --graph --all</code><span>Visual branch graph</span></div>
+            <div class="cs-cmd"><code>git diff</code><span>Unstaged changes</span></div>
+            <div class="cs-cmd"><code>git diff --staged</code><span>Staged vs last commit</span></div>
+            <div class="cs-cmd"><code>git show &lt;commit&gt;</code><span>Show commit details</span></div>
+          </div>
+        </div>
+        <div class="cs-category">
+          <h3>🚑 Undo & Recovery</h3>
+          <div class="cs-commands">
+            <div class="cs-cmd"><code>git restore &lt;file&gt;</code><span>Discard working changes</span></div>
+            <div class="cs-cmd"><code>git restore --staged &lt;file&gt;</code><span>Unstage a file</span></div>
+            <div class="cs-cmd"><code>git revert &lt;commit&gt;</code><span>Undo commit safely</span></div>
+            <div class="cs-cmd"><code>git reset --soft HEAD~1</code><span>Undo last commit (keep staged)</span></div>
+            <div class="cs-cmd"><code>git reset --hard HEAD~1</code><span>⚠️ Undo + discard changes</span></div>
+          </div>
+        </div>
+        <div class="cs-category">
+          <h3>📦 Stash</h3>
+          <div class="cs-commands">
+            <div class="cs-cmd"><code>git stash</code><span>Stash changes</span></div>
+            <div class="cs-cmd"><code>git stash pop</code><span>Restore and remove stash</span></div>
+            <div class="cs-cmd"><code>git stash list</code><span>List stashes</span></div>
+            <div class="cs-cmd"><code>git stash apply stash@{0}</code><span>Apply specific stash</span></div>
+          </div>
+        </div>
+        <div class="cs-category">
+          <h3>🏷️ Tags</h3>
+          <div class="cs-commands">
+            <div class="cs-cmd"><code>git tag</code><span>List all tags</span></div>
+            <div class="cs-cmd"><code>git tag -a v1.0 -m "msg"</code><span>Create annotated tag</span></div>
+            <div class="cs-cmd"><code>git push origin --tags</code><span>Push all tags</span></div>
+            <div class="cs-cmd"><code>git tag -d v1.0</code><span>Delete local tag</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 30-DAY ROADMAP ===================== -->
+    <section class="module-section" id="roadmap30">
+      <div class="module-header">
+        <div class="module-number">📅</div>
+        <div class="module-info">
+          <h2>30-Day GitHub Learning Roadmap</h2>
+          <p>A structured daily plan to go from absolute beginner to confident GitHub user in one month.</p>
+        </div>
+      </div>
+
+      <div class="roadmap-grid">
+        <div class="roadmap-week">
+          <div class="week-header week1">Week 1: Foundations</div>
+          <div class="day-item"><span class="day-num">Day 1</span><span>Install Git, create GitHub account, configure user.name and email</span></div>
+          <div class="day-item"><span class="day-num">Day 2</span><span>Learn terminal basics: pwd, ls, cd, mkdir, touch</span></div>
+          <div class="day-item"><span class="day-num">Day 3</span><span>git init, git status, git add, first commit</span></div>
+          <div class="day-item"><span class="day-num">Day 4</span><span>Set up SSH key, push first project to GitHub</span></div>
+          <div class="day-item"><span class="day-num">Day 5</span><span>git log, git diff, git show — reading history</span></div>
+          <div class="day-item"><span class="day-num">Day 6</span><span>git clone, git pull, git fetch — working with remotes</span></div>
+          <div class="day-item"><span class="day-num">Day 7</span><span>Review + create a complete portfolio project with proper commits</span></div>
+        </div>
+        <div class="roadmap-week">
+          <div class="week-header week2">Week 2: Branching & Collaboration</div>
+          <div class="day-item"><span class="day-num">Day 8</span><span>Learn branching: create, switch, delete branches</span></div>
+          <div class="day-item"><span class="day-num">Day 9</span><span>git merge — fast-forward and three-way merges</span></div>
+          <div class="day-item"><span class="day-num">Day 10</span><span>Practice creating and resolving merge conflicts</span></div>
+          <div class="day-item"><span class="day-num">Day 11</span><span>Learn .gitignore — create templates for your projects</span></div>
+          <div class="day-item"><span class="day-num">Day 12</span><span>Master Markdown — write a beautiful README for each project</span></div>
+          <div class="day-item"><span class="day-num">Day 13</span><span>GitHub Issues and Projects — set up project boards</span></div>
+          <div class="day-item"><span class="day-num">Day 14</span><span>Open your first Pull Request on a team or practice repo</span></div>
+        </div>
+        <div class="roadmap-week">
+          <div class="week-header week3">Week 3: Open Source & Profile</div>
+          <div class="day-item"><span class="day-num">Day 15</span><span>Set up profile README with stats, badges, and links</span></div>
+          <div class="day-item"><span class="day-num">Day 16</span><span>Find a good-first-issue on a project you use</span></div>
+          <div class="day-item"><span class="day-num">Day 17</span><span>Fork, clone, set upstream remote — practice the workflow</span></div>
+          <div class="day-item"><span class="day-num">Day 18</span><span>Make a real contribution (docs, typo fix, small bug)</span></div>
+          <div class="day-item"><span class="day-num">Day 19</span><span>Learn git stash — practice context switching</span></div>
+          <div class="day-item"><span class="day-num">Day 20</span><span>Learn git rebase and interactive rebase</span></div>
+          <div class="day-item"><span class="day-num">Day 21</span><span>Deploy a project using GitHub Pages</span></div>
+        </div>
+        <div class="roadmap-week">
+          <div class="week-header week4">Week 4: Advanced & Career</div>
+          <div class="day-item"><span class="day-num">Day 22</span><span>Learn GitHub Actions — set up basic CI workflow</span></div>
+          <div class="day-item"><span class="day-num">Day 23</span><span>git cherry-pick and git tags — learn semantic versioning</span></div>
+          <div class="day-item"><span class="day-num">Day 24</span><span>Branch protection rules and required reviews</span></div>
+          <div class="day-item"><span class="day-num">Day 25</span><span>Build and publish a mini project with proper Release/Tags</span></div>
+          <div class="day-item"><span class="day-num">Day 26</span><span>Pin your top 6 repos, polish READMEs with screenshots</span></div>
+          <div class="day-item"><span class="day-num">Day 27</span><span>Study 20 common Git interview questions with answers</span></div>
+          <div class="day-item"><span class="day-num">Day 28</span><span>Contribute to Hacktoberfest or similar event if timing allows</span></div>
+          <div class="day-item"><span class="day-num">Day 29</span><span>Review your contribution graph — fill any gaps</span></div>
+          <div class="day-item"><span class="day-num">Day 30</span><span>🎉 Final project: Full-stack app with CI/CD, issues, proper workflow</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="module-section" id="projects">
+      <div class="module-header">
+        <div class="module-number">🚀</div>
+        <div class="module-info">
+          <h2>Projects: Beginner → Portfolio-Level</h2>
+          <p>Practice projects designed to build your skills and GitHub portfolio progressively.</p>
+        </div>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-tier">
+          <div class="tier-header beginner-tier">🌱 Beginner Projects</div>
+          <div class="project-card">
+            <div class="project-name">Personal Portfolio Website</div>
+            <div class="project-desc">Build an HTML/CSS personal portfolio. Practice: git init, commits, GitHub Pages deployment, README with screenshots.</div>
+            <div class="project-skills"><span>HTML</span><span>CSS</span><span>GitHub Pages</span></div>
+          </div>
+          <div class="project-card">
+            <div class="project-name">Git Practice Repo</div>
+            <div class="project-desc">A dedicated repo for practicing all 10 core commands. Create branches, simulate conflicts, resolve them, practice stashing.</div>
+            <div class="project-skills"><span>Git Fundamentals</span><span>Branching</span></div>
+          </div>
+          <div class="project-card">
+            <div class="project-name">Recipe Book (Markdown)</div>
+            <div class="project-desc">Create a repository of recipes written entirely in Markdown. Practice: formatting, tables, lists, images, and file organization.</div>
+            <div class="project-skills"><span>Markdown</span><span>Documentation</span></div>
+          </div>
+        </div>
+        <div class="project-tier">
+          <div class="tier-header intermediate-tier">⚡ Intermediate Projects</div>
+          <div class="project-card">
+            <div class="project-name">Task Manager App</div>
+            <div class="project-desc">Build a web app with feature branches for each component (auth, tasks, UI). Open PRs between branches. Set up a GitHub Project board with issues.</div>
+            <div class="project-skills"><span>JavaScript</span><span>Branching</span><span>GitHub Projects</span></div>
+          </div>
+          <div class="project-card">
+            <div class="project-name">Student Management System</div>
+            <div class="project-desc">Full CRUD application. Use conventional commits, semantic versioning (v1.0.0), GitHub releases, and a comprehensive README with screenshots.</div>
+            <div class="project-skills"><span>Any language</span><span>SemVer</span><span>Releases</span></div>
+          </div>
+          <div class="project-card">
+            <div class="project-name">CLI Tool with GitHub Actions CI</div>
+            <div class="project-desc">Build any command-line tool. Add a GitHub Actions workflow that runs tests automatically on every push. Practice CI/CD setup.</div>
+            <div class="project-skills"><span>Python/Node.js</span><span>GitHub Actions</span><span>CI/CD</span></div>
+          </div>
+        </div>
+        <div class="project-tier">
+          <div class="tier-header portfolio-tier">🏆 Portfolio-Level Projects</div>
+          <div class="project-card">
+            <div class="project-name">Open Source Contribution</div>
+            <div class="project-desc">Find a real project on GitHub, fork it, fix a good-first-issue, and get your PR merged. Demonstrates real collaboration skills to recruiters.</div>
+            <div class="project-skills"><span>Full Workflow</span><span>Open Source</span><span>Code Review</span></div>
+          </div>
+          <div class="project-card">
+            <div class="project-name">Full-Stack App with DevOps</div>
+            <div class="project-desc">Build a complete full-stack application with: GitHub Actions CI/CD pipeline, branch protection rules, GitHub Projects, and automatic deployment to a cloud platform.</div>
+            <div class="project-skills"><span>Full Stack</span><span>DevOps</span><span>Cloud Deploy</span></div>
+          </div>
+          <div class="project-card">
+            <div class="project-name">Developer Blog on GitHub Pages</div>
+            <div class="project-desc">Create a technical blog using Jekyll and GitHub Pages. Write articles about your learning journey. Use GitHub Actions to auto-deploy. Adds to professional presence.</div>
+            <div class="project-skills"><span>Jekyll</span><span>GitHub Pages</span><span>Actions</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== INTERVIEW Q&A ===================== -->
+    <section class="module-section" id="interviews">
+      <div class="module-header">
+        <div class="module-number">🎤</div>
+        <div class="module-info">
+          <h2>Interview Questions with Detailed Answers</h2>
+          <p>Comprehensive Q&A covering all topics — from basic concepts to advanced scenarios.</p>
+        </div>
+      </div>
+
+      <div class="interview-full-list">
+        <div class="iq-category">
+          <h3>📘 Fundamentals</h3>
+          <div class="qa-item">
+            <div class="question">Q: What is the difference between git reset and git revert?</div>
+            <div class="answer"><strong>git reset</strong> moves the branch pointer backward to a previous commit, effectively removing commits from history. It has three modes: --soft (keeps changes staged), --mixed (keeps changes unstaged), --hard (discards all changes). It rewrites history and should only be used on local/private branches.<br><br><strong>git revert</strong> creates a <em>new commit</em> that undoes the changes of a previous commit, without removing it from history. It is safe to use on shared branches because it does not rewrite history — it adds to it.</div>
+          </div>
+          <div class="qa-item">
+            <div class="question">Q: What is HEAD in Git?</div>
+            <div class="answer">HEAD is a special pointer that indicates which branch or commit you are currently working on. In normal operation, HEAD points to a branch (e.g., "HEAD → main"). When you switch branches, HEAD moves to the new branch. When you checkout a specific commit directly (not a branch), you enter "detached HEAD" state — HEAD points directly to a commit rather than a branch. Any commits made in detached HEAD state are not on any branch and may be lost.</div>
+          </div>
+          <div class="qa-item">
+            <div class="question">Q: What is the .git directory and what should you never do to it?</div>
+            <div class="answer">The .git directory is the heart of your Git repository — it contains all commit history, branch information, configuration, staged changes, and all Git metadata. It is created by git init. You should NEVER manually edit files inside .git, delete it (it would destroy your entire history), or copy it independently. Git commands manage .git correctly; manual edits can corrupt your repository irreversibly.</div>
+          </div>
+        </div>
+
+        <div class="iq-category">
+          <h3>🌿 Branching & Merging</h3>
+          <div class="qa-item">
+            <div class="question">Q: What is a detached HEAD state and how do you recover from it?</div>
+            <div class="answer">Detached HEAD occurs when HEAD points to a specific commit instead of a branch. This happens when you checkout a commit hash, tag, or remote-tracking branch directly. In this state, any new commits are not attached to any branch and will be lost when you switch branches. To recover: 1) If you haven't made new commits, simply switch to any branch (git switch main). 2) If you made commits you want to keep, create a new branch at the current position: <code>git switch -c new-branch-name</code>. This saves your work onto a proper branch.</div>
+          </div>
+          <div class="qa-item">
+            <div class="question">Q: Explain fast-forward vs three-way merge with an example.</div>
+            <div class="answer">Fast-forward merge happens when the target branch (main) has not diverged from the feature branch — main has no new commits since the branch was created. Git simply moves the main pointer forward to the feature branch's latest commit. No merge commit is created. The history appears linear.<br><br>Three-way merge happens when both branches have new commits since they diverged. Git uses three commits as reference points: the two branch tips and their common ancestor. It creates a new merge commit with two parents. This preserves the complete history of both development lines and is the most common merge in team environments.</div>
+          </div>
+        </div>
+
+        <div class="iq-category">
+          <h3>🔄 Workflows & Collaboration</h3>
+          <div class="qa-item">
+            <div class="question">Q: What is a Pull Request and why is it important?</div>
+            <div class="answer">A Pull Request (PR) is a GitHub feature that formally proposes merging changes from one branch into another. It is NOT a Git concept — it is a GitHub collaboration tool. PRs are important because they: 1) Trigger code review by teammates before merging, 2) Display a diff of all proposed changes, 3) Allow inline comments on specific lines of code, 4) Trigger CI/CD checks to verify tests pass, 5) Maintain a permanent record of discussion and decisions about the change, 6) Can require specific approvals before merging. In professional environments, NO code goes directly to main — it always goes through a PR.</div>
+          </div>
+          <div class="qa-item">
+            <div class="question">Q: What is the difference between GitHub Flow and GitFlow?</div>
+            <div class="answer">GitHub Flow is simpler: only two types of branches — main (always deployable) and feature branches. Any merged PR to main is immediately deployed. It is ideal for continuous deployment environments and small-to-medium teams.<br><br>GitFlow is more structured with multiple long-lived branches: main (production), develop (integration), feature/*, release/*, and hotfix/*. It was designed for projects with scheduled releases and strict versioning. GitFlow provides more control but requires more discipline and is more complex. Most modern teams use GitHub Flow for its simplicity.</div>
+          </div>
+          <div class="qa-item">
+            <div class="question">Q: How do you handle a situation where you accidentally committed sensitive data (API key) to a public repository?</div>
+            <div class="answer">This is a serious incident. Steps: 1) IMMEDIATELY revoke/rotate the compromised credential in the service that issued it (AWS, GitHub, Google, etc.) — assume it's already been scraped by bots. 2) Remove it from history using git filter-branch or BFG Repo-Cleaner. 3) Force-push the cleaned history. 4) Contact GitHub Support if needed. 5) Add the file to .gitignore to prevent future accidents. 6) Use environment variables and tools like git-secrets or pre-commit hooks going forward. Remember: deleting the file and committing is NOT sufficient — the credential remains in Git history and GitHub cache.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MASTERY ROADMAP ===================== -->
+    <section class="module-section mastery-section" id="mastery">
+      <div class="module-header">
+        <div class="module-number">🗺️</div>
+        <div class="module-info">
+          <h2>GitHub Mastery Roadmap</h2>
+          <p>Your complete progression from absolute beginner to industry professional.</p>
+        </div>
+      </div>
+
+      <div class="mastery-roadmap">
+        <div class="mastery-level beginner-level">
+          <div class="level-icon">🌱</div>
+          <div class="level-title">Beginner</div>
+          <div class="level-timeframe">Weeks 1-4</div>
+          <div class="level-skills">
+            <div class="skill-tag">git init, add, commit</div>
+            <div class="skill-tag">git push, pull, clone</div>
+            <div class="skill-tag">GitHub account setup</div>
+            <div class="skill-tag">Basic branching</div>
+            <div class="skill-tag">README & .gitignore</div>
+            <div class="skill-tag">GitHub interface navigation</div>
+          </div>
+          <div class="level-milestone">🏁 Milestone: First project pushed to GitHub</div>
+        </div>
+
+        <div class="mastery-arrow">→</div>
+
+        <div class="mastery-level intermediate-level">
+          <div class="level-icon">⚡</div>
+          <div class="level-title">Intermediate</div>
+          <div class="level-timeframe">Months 2-3</div>
+          <div class="level-skills">
+            <div class="skill-tag">Branch workflows (GitHub Flow)</div>
+            <div class="skill-tag">Pull Requests & Code Review</div>
+            <div class="skill-tag">Merge conflict resolution</div>
+            <div class="skill-tag">git stash, rebase, cherry-pick</div>
+            <div class="skill-tag">GitHub Actions (basic CI)</div>
+            <div class="skill-tag">GitHub Pages deployment</div>
+            <div class="skill-tag">Semantic versioning & tags</div>
+          </div>
+          <div class="level-milestone">🏁 Milestone: First PR merged into an external project</div>
+        </div>
+
+        <div class="mastery-arrow">→</div>
+
+        <div class="mastery-level advanced-level">
+          <div class="level-icon">🔥</div>
+          <div class="level-title">Advanced</div>
+          <div class="level-timeframe">Months 4-6</div>
+          <div class="level-skills">
+            <div class="skill-tag">Advanced CI/CD pipelines</div>
+            <div class="skill-tag">Branch protection rules</div>
+            <div class="skill-tag">git bisect & debugging</div>
+            <div class="skill-tag">Git hooks & automation</div>
+            <div class="skill-tag">Repository administration</div>
+            <div class="skill-tag">Security (Dependabot, scanning)</div>
+            <div class="skill-tag">GitHub API & GraphQL</div>
+          </div>
+          <div class="level-milestone">🏁 Milestone: Complete CI/CD pipeline for a real project</div>
+        </div>
+
+        <div class="mastery-arrow">→</div>
+
+        <div class="mastery-level opensource-level">
+          <div class="level-icon">🌍</div>
+          <div class="level-title">Open Source Contributor</div>
+          <div class="level-timeframe">Months 6-12</div>
+          <div class="level-skills">
+            <div class="skill-tag">Regular OSS contributions</div>
+            <div class="skill-tag">Maintainer communication</div>
+            <div class="skill-tag">GSoC / Major program</div>
+            <div class="skill-tag">Own OSS projects</div>
+            <div class="skill-tag">Community building</div>
+            <div class="skill-tag">Mentoring newcomers</div>
+          </div>
+          <div class="level-milestone">🏁 Milestone: Accepted contributor to a well-known project</div>
+        </div>
+
+        <div class="mastery-arrow">→</div>
+
+        <div class="mastery-level professional-level">
+          <div class="level-icon">💼</div>
+          <div class="level-title">Professional Developer</div>
+          <div class="level-timeframe">Year 1+</div>
+          <div class="level-skills">
+            <div class="skill-tag">Enterprise GitHub workflows</div>
+            <div class="skill-tag">Team leadership via PRs</div>
+            <div class="skill-tag">Architecture decisions in GitHub</div>
+            <div class="skill-tag">Security compliance</div>
+            <div class="skill-tag">Multi-repo management</div>
+            <div class="skill-tag">DevOps/SRE practices</div>
+          </div>
+          <div class="level-milestone">🏁 Milestone: Hired as software engineer; contributing to company GitHub</div>
+        </div>
+      </div>
+
+      <div class="final-checklist">
+        <h3>✅ GitHub Best Practices Checklist</h3>
+        <div class="checklist-grid">
+          <label class="check-item"><input type="checkbox" id="chk1" /><span>Git installed and configured with name & email</span></label>
+          <label class="check-item"><input type="checkbox" id="chk2" /><span>SSH key set up and connected to GitHub</span></label>
+          <label class="check-item"><input type="checkbox" id="chk3" /><span>Profile README created with skills and projects</span></label>
+          <label class="check-item"><input type="checkbox" id="chk4" /><span>Every repository has a README.md</span></label>
+          <label class="check-item"><input type="checkbox" id="chk5" /><span>.gitignore file in every project</span></label>
+          <label class="check-item"><input type="checkbox" id="chk6" /><span>Never committing secrets or API keys</span></label>
+          <label class="check-item"><input type="checkbox" id="chk7" /><span>Using feature branches (never coding directly on main)</span></label>
+          <label class="check-item"><input type="checkbox" id="chk8" /><span>Writing meaningful, conventional commit messages</span></label>
+          <label class="check-item"><input type="checkbox" id="chk9" /><span>Using Pull Requests for all changes</span></label>
+          <label class="check-item"><input type="checkbox" id="chk10" /><span>Consistent contribution activity (daily commits)</span></label>
+          <label class="check-item"><input type="checkbox" id="chk11" /><span>Pinned repositories showcase best work</span></label>
+          <label class="check-item"><input type="checkbox" id="chk12" /><span>At least one open-source contribution made</span></label>
+          <label class="check-item"><input type="checkbox" id="chk13" /><span>GitHub Pages site deployed</span></label>
+          <label class="check-item"><input type="checkbox" id="chk14" /><span>Basic GitHub Actions CI workflow configured</span></label>
+          <label class="check-item"><input type="checkbox" id="chk15" /><span>Can comfortably resolve merge conflicts</span></label>
+          <label class="check-item"><input type="checkbox" id="chk16" /><span>Reviewed all 20+ interview questions</span></label>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>GitHub Mastery Guide</span>
+        </div>
+        <p class="footer-desc">A complete self-learning resource for developers at every stage — from first commit to open-source contributor.</p>
+        <p class="footer-note">Built with ❤️ using pure HTML &amp; CSS · 13 Modules · 50+ Commands · 30-Day Roadmap</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
